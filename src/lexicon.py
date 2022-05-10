@@ -1,8 +1,7 @@
-from src import cwdir
 import os
 import csv
 
-_data_dir = os.path.join(cwdir, 'examples/nl_nl/data/')
+_data_dir = "../data"
 _names_path = os.path.join(_data_dir, 'Top_eerste_voornamen_NL_2010.csv')
 _de_noun_path = os.path.join(_data_dir, 'de_personen.txt')
 _het_noun_path = os.path.join(_data_dir, 'het_personen.txt')
@@ -15,6 +14,7 @@ _ipp_itv_path = os.path.join(_data_dir, 'ipp_intrans_infinitives.txt')
 _ipp_tv_path = os.path.join(_data_dir, 'ipp_trans_infinitives.txt')
 _ipp_itv_te_path = os.path.join(_data_dir, 'ipp_intrans_infinitives_te.txt')
 _nvg_verbs_path = os.path.join(_data_dir, 'nvg_werkwoorden.txt')
+
 
 def _load_plain(path: str) -> list[str]:
     return [ln.strip() for ln in open(path, 'r').readlines() if '_' not in ln]
