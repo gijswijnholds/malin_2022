@@ -20,43 +20,43 @@ def condia(left, right) -> Term:
 # Term = Category | tuple[Term, Term] | tuple[str, Term]
 
 
-# enumeration of canonical constants
 class Category(Enum):
-    A = ...
-    B = ...
-    C = ...
+    INF0 = auto()
+    INF1 = auto()
+    INF1A = auto()
+    IVR0 = auto()
+    IVR1 = auto()
+    IVR2 = auto()
+    INF2 = auto()
+    INF3 = auto()
+    INF4 = auto()
+    OBJ1A = auto()
+    OBJ1I = auto()
+    OBJ2 = auto()
+    PREF1 = auto()
+    PREF2 = auto()
+    TE = auto()
 
-    iets = ...
-    zal = ...
-    haar = ...
-    verzoeken = ...
-    hun = ...
-    laten = ...
-    willen = ...
-    ontmoeten = ...
-    vertrekken = ...
-    proberen = ...
-    te = ...
-    beloven = ...
-    zeggen = ...
-    hij = ...
+    def to_lexicon(self) -> list[str]:
+        return eval(f'Lexicon.{self.name.lower()}()')
 
 
-iets = Category.A
-zal = Category.zal
-haar = Category.A
-verzoeken = Category.verzoeken
-hun = Category.hun
-laten = Category.laten
-willen = Category.willen
-ontmoeten = Category.ontmoeten
-vertrekken = Category.vertrekken
-proberen = Category.proberen
-te = Category.te
-beloven = Category.beloven
-zeggen = Category.zeggen
-hij = Category.hij
-
+# enumeration of canonical constants
+iets = Category.OBJ1I
+zal = Category.PREF2
+haar = Category.OBJ1A
+verzoeken = Category.INF3
+hun = Category.OBJ2
+laten = Category.IVR1
+willen = Category.IVR0
+ontmoeten = Category.INF1A
+vertrekken = Category.INF0
+proberen = Category.IVR2
+te = Category.TE
+beloven = Category.INF4
+zeggen = Category.INF1
+hij = Category.PREF1
+dreigen = Category.INF2
 
 
 # reading
@@ -89,7 +89,7 @@ def load_samples(path: str) -> list[Sample]:
     return list(map(make_sample, data))
 
 path = './prolog/sample.txt'
-# samples = load_samples(path)
+samples = load_samples(path)
 # def generate(sequence: list[Category]) -> list[list[StringSample]]:
 #     pass
 
