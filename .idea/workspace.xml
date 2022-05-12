@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of Michael's code">
-      <change afterPath="$PROJECT_DIR$/prolog/sample_log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prolog/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prolog/sample.txt" afterDir="false" />
+    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of Michael's code and ours">
       <change beforePath="$PROJECT_DIR$/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generate.py" afterDir="false" />
     </list>
     <list id="39e46e78-13ae-4bde-a7bc-2399201dae3c" name="Changes by kokos" comment="" />
@@ -114,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652267670423</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update of Michael's code and ours">
+      <created>1652366632586</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652366632586</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,7 +138,8 @@
     <MESSAGE value="Add NL first names" />
     <MESSAGE value="Starter of the generation code" />
     <MESSAGE value="Update of Michael's code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update of Michael's code" />
+    <MESSAGE value="Update of Michael's code and ours" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update of Michael's code and ours" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

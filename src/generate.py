@@ -89,7 +89,6 @@ def load_samples(path: str) -> list[Sample]:
     return list(map(make_sample, data))
 
 path = './prolog/sample.txt'
-path = './prolog/sample_log.txt'
 # samples = load_samples(path)
 # def generate(sequence: list[Category]) -> list[list[StringSample]]:
 #     pass
