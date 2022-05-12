@@ -424,10 +424,6 @@ hij zal hun verzoeken haar te laten willen vertrekken
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(verzoeken,hij),(laten,hun),(willen,haar),(vertrekken,haar)]
 
-x3@(x1@(x0@d7)@d2)@(h1@(g1@d4@(f1@d5@d1)@d3))
-hij zal willen beloven haar iets te laten zeg),condia(obj2,hun)))),condia(su,hij))
-[(zal,hij),(verzoeken,hij),(willen,hun),(ontmoeten,hun)]
-
 x3@(x5@d10@d9)@(h1@(g1@d4@(f0@d0)@d3))
 hij zal hun verzoeken haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Starter of the generation code">
+    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of Michael's code">
+      <change afterPath="$PROJECT_DIR$/prolog/sample_log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prolog/sample.txt" beforeDir="false" afterPath="$PROJECT_DIR$/prolog/sample.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generate.py" afterDir="false" />
     </list>
     <list id="39e46e78-13ae-4bde-a7bc-2399201dae3c" name="Changes by kokos" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +25,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/prolog/inputcat.pl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/lexicon.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/generate.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/prolog/lambda_aux.pl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/prolog/dutchvr_cfg.pl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/data/de_personen.txt" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="28hlUiorYwbN5dixARDgwIUVpY4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -35,13 +42,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/prolog" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/prolog" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/data" />
@@ -100,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652196364239</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update of Michael's code">
+      <created>1652267670423</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652267670423</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,12 +127,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit innit?" />
     <MESSAGE value="Add NL first names" />
     <MESSAGE value="Starter of the generation code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starter of the generation code" />
+    <MESSAGE value="Update of Michael's code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update of Michael's code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
