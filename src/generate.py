@@ -1,25 +1,11 @@
 from __future__ import annotations
-from enum import Enum
+from enum import Enum, auto
 from typing import NamedTuple
 
 
-# enumeration of dependencies
-vc = 'vc'
-su = 'su'
-obj1 = 'obj1'
-obj2 = 'obj2'
-
-def appl(left, right) -> Term:
-    return left, right
-
-
-def condia(left, right) -> Term:
-    return left, right
-
-
-# Term = Category | tuple[Term, Term] | tuple[str, Term]
-
-
+########################################################################################################################
+# Categories
+########################################################################################################################
 class Category(Enum):
     INF0 = auto()
     INF1 = auto()
@@ -40,8 +26,7 @@ class Category(Enum):
     def to_lexicon(self) -> list[str]:
         return eval(f'Lexicon.{self.name.lower()}()')
 
-
-# enumeration of canonical constants
+# Canonical Constants
 iets = Category.OBJ1I
 zal = Category.PREF2
 haar = Category.OBJ1A
@@ -59,12 +44,138 @@ hij = Category.PREF1
 dreigen = Category.INF2
 
 
-# reading
-AST = ...
-Term = ...
-Sample = tuple[AST, list[Category], Term, list[tuple[Category, Category]]]
+########################################################################################################################
+# Abstract Syntax Trees
+########################################################################################################################
+class AST:
+    def __matmul__(self, other) -> RuleTree: return RuleTree(self, other)
+    def __len__(self) -> int: raise NotImplementedError
+    def __repr__(self) -> str: raise NotImplementedError
 
 
+class Rule(AST, Enum):
+    r0 = auto()
+    r1 = auto()
+    f0 = auto()
+    f1 = auto()
+    f2 = auto()
+    d0 = auto()
+    d1 = auto()
+    d2 = auto()
+    d3 = auto()
+    d4 = auto()
+    d5 = auto()
+    d6 = auto()
+    d7 = auto()
+    d8 = auto()
+    d9 = auto()
+    d10 = auto()
+    d11 = auto()
+    d12 = auto()
+    g0 = auto()
+    g1 = auto()
+    h0 = auto()
+    h1 = auto()
+    x0 = auto()
+    x1 = auto()
+    x2 = auto()
+    x3 = auto()
+    x4 = auto()
+    x5 = auto()
+    x6 = auto()
+    x7 = auto()
+    x8 = auto()
+    x9 = auto()
+
+    def __repr__(self) -> str: return self.name
+    def __len__(self) -> int: return 0
+
+
+class RuleTree(AST):
+    def __init__(self, left: AST, right: AST): self.left = left; self.right = right
+    def __repr__(self) -> str: return f'({repr(self.left)}, {repr(self.right)})'
+    def __len__(self) -> int: return 1 + max(len(self.left), len(self.right))
+
+
+# Rule shortcuts
+r0 = Rule.r0
+r1 = Rule.r1
+f0 = Rule.f0
+f1 = Rule.f1
+f2 = Rule.f2
+d0 = Rule.d0
+d1 = Rule.d1
+d2 = Rule.d2
+d3 = Rule.d3
+d4 = Rule.d4
+d5 = Rule.d5
+d6 = Rule.d6
+d7 = Rule.d7
+d8 = Rule.d8
+d9 = Rule.d9
+d10 = Rule.d10
+d11 = Rule.d11
+d12 = Rule.d12
+g0 = Rule.g0
+g1 = Rule.g1
+h0 = Rule.h0
+h1 = Rule.h1
+x0 = Rule.x0
+x1 = Rule.x1
+x2 = Rule.x2
+x3 = Rule.x3
+x4 = Rule.x4
+x5 = Rule.x5
+x6 = Rule.x6
+x7 = Rule.x7
+x8 = Rule.x8
+x9 = Rule.x9
+
+
+########################################################################################################################
+# Semantic Terms
+########################################################################################################################
+class Term:
+    def __len__(self) -> int: raise NotImplementedError
+    def __repr__(self) -> str: raise NotImplementedError
+
+
+class Application(Term):
+    def __init__(self, function: Term | Category, argument: Term | Category):
+        self.function = function
+        self.argument = argument
+
+    def __len__(self) -> int: return 1 + max(len(self.function), len(self.argument))
+    def __repr__(self) -> str: return f'appl({repr(self.function)}, {repr(self.argument)})'
+
+
+class DiaElim(Term):
+    def __init__(self, diamond: str, body: Term | Category):
+        self.diamond = diamond
+        self.body = body
+
+    def __len__(self) -> int: return len(self.body)
+    def __repr__(self) -> str: return f'condia({self.diamond}, {repr(self.body)})'
+
+
+vc = 'vc'
+su = 'su'
+obj1 = 'obj1'
+obj2 = 'obj2'
+...
+
+
+def appl(left, right) -> Application:
+    return Application(left, right)
+
+
+def condia(left, right) -> DiaElim:
+    return DiaElim(left, right)
+
+
+########################################################################################################################
+# Sample
+########################################################################################################################
 class Sample(NamedTuple):
     ast:        AST
     sentence:   list[Category]
@@ -73,14 +184,11 @@ class Sample(NamedTuple):
 
 
 def make_sample(lines: list[str]) -> Sample:
-    # def eval_ast(line: str) -> AST: return eval(line)
-    def eval_ast(line: str) -> AST: return line
+    def eval_ast(line: str) -> AST: return eval(line)
     def eval_matchings(line: str) -> list[tuple[Category, Category]]: return eval(line)
     def eval_sentence(line: str) -> list[Category]: return list(map(eval, line.split()))
     def eval_semterm(line: str) -> Term: return eval(line)
-
-    ast, sentence, sem_term, matchings = lines
-    return Sample(eval_ast(ast), eval_sentence(sentence), eval_semterm(sem_term), eval_matchings(matchings))
+    return Sample(*[f(x) for f, x in zip([eval_ast, eval_sentence, eval_semterm, eval_matchings], lines)])
 
 
 def load_samples(path: str) -> list[Sample]:
@@ -88,10 +196,14 @@ def load_samples(path: str) -> list[Sample]:
         data = list(map(lambda ln: ln.split('\n'), in_file.read().strip().split('\n\n')))
     return list(map(make_sample, data))
 
-path = './prolog/sample.txt'
-samples = load_samples(path)
-# def generate(sequence: list[Category]) -> list[list[StringSample]]:
-#     pass
+
+def main():
+    path = './prolog/sample.txt'
+    samples = load_samples(path)
+    return samples
+
 
 if __name__ == '__main__':
-    raise NotImplementedError
+    path = '../prolog/sample.txt'
+    samples = load_samples(path)
+
