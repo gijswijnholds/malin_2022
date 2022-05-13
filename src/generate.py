@@ -1,6 +1,8 @@
 from __future__ import annotations
 from enum import Enum, auto
-from typing import NamedTuple
+from typing import NamedTuple, TypeVar
+
+Choices = TypeVar('Choices')
 
 
 ########################################################################################################################
@@ -23,8 +25,8 @@ class Category(Enum):
     PREF2 = auto()
     TE = auto()
 
-    def to_lexicon(self) -> list[str]:
-        return eval(f'Lexicon.{self.name.lower()}()')
+    def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')  # todo
+    def __repr__(self) -> str: return self.name
 
 # Canonical Constants
 iets = Category.OBJ1I
@@ -174,7 +176,7 @@ def condia(left, right) -> DiaElim:
 
 
 ########################################################################################################################
-# Sample
+# Samples
 ########################################################################################################################
 class Sample(NamedTuple):
     ast:        AST
@@ -197,13 +199,26 @@ def load_samples(path: str) -> list[Sample]:
     return list(map(make_sample, data))
 
 
-def main():
-    path = './prolog/sample.txt'
-    samples = load_samples(path)
-    return samples
+########################################################################################################################
+# Concrete Surface Forms
+########################################################################################################################
+class Concrete:
+    source:         Sample
+    realization:    list[str]
+
+    @staticmethod
+    def from_sample(sample: Sample, n: int) -> Concrete:
+        choices: list[Choices] = [cat.to_lexicon() for cat in sample.sentence]
+        # todo: sampling and filtering logic here
+        ...
+
+
+def main(path: str = './prolog/sample.txt') -> list[Sample]: return load_samples(path)
 
 
 if __name__ == '__main__':
-    path = '../prolog/sample.txt'
-    samples = load_samples(path)
-
+    from argparse import ArgumentParser
+    parser = ArgumentParser()
+    parser.add_argument('path', type=str, default='./prolog/sample.txt')
+    args = parser.parse_args()
+    main(args.path)
