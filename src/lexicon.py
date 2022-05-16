@@ -1,5 +1,6 @@
 import os
 import csv
+from typing import Callable
 
 _data_dir = "../data"
 _names_path = os.path.join(_data_dir, 'Top_eerste_voornamen_NL_2010.csv')
@@ -34,7 +35,7 @@ def _load_control_verbs(path: str) -> tuple[list[str], list[str]]:
     return list(verbs_present), list(verbs_inf)
 
 
-def _load_names(path: str) -> tuple[list[str], list[str]]:
+def _load_names(path: str) -> list[str]:
     with open(path, newline='', encoding='ISO-8859-1') as csvfile:
         reader = csv.reader(csvfile, delimiter=';', quotechar='|')
         female_names, male_names = zip(*[(ln[1], ln[3]) for ln in reader])
