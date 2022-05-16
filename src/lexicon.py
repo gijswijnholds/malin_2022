@@ -6,6 +6,7 @@ _data_dir = "../data"
 _names_path = os.path.join(_data_dir, 'Top_eerste_voornamen_NL_2010.csv')
 _de_noun_path = os.path.join(_data_dir, 'de_personen.txt')
 _het_noun_path = os.path.join(_data_dir, 'het_personen.txt')
+_inanimate_objects_path = os.path.join(_data_dir, 'inanimate_objects.txt')
 
 _trans_inf_animate_obj_path = os.path.join(_data_dir, 'trans_infinitives_animate_object.txt')
 _trans_inf_inanimate_obj_path = os.path.join(_data_dir, 'trans_infinitives_inanimate_object.txt')
@@ -20,8 +21,6 @@ _verb_raisers_trans_path = os.path.join(_data_dir, 'verb_raisers_trans.txt')
 
 
 _adv_path = os.path.join(_data_dir, 'adverbs.txt')
-
-
 
 
 def _load_plain(path: str) -> list[str]:
@@ -45,23 +44,25 @@ def _load_names(path: str) -> list[str]:
 
 _names = _load_names(_names_path)
 
-
 _de_nouns = _load_plain(_de_noun_path)
 _het_nouns = _load_plain(_het_noun_path)
+
+_inanimate_objects = _load_plain(_inanimate_objects_path)
+
 _obj_control_verbs_present, _obj_control_verbs_inf = _load_control_verbs(_obj_cv_path)
-_sub_control_verbs_present, _sub_control_verbs_inf = _load_control_verbs(_sub_cv_path)
+_subj_control_verbs_present, _subj_control_verbs_inf = _load_control_verbs(_sub_cv_path)
 
 _intrans_inf_verbs = _load_plain(_intrans_inf_verbs_path)
+
 _trans_inf_verbs_animate_obj = _load_plain(_trans_inf_animate_obj_path)
 _trans_inf_verbs_inanimate_obj = _load_plain(_trans_inf_inanimate_obj_path)
+
 _verb_raisers_intrans = _load_plain(_verb_raisers_intrans_path)
 _verb_raisers_trans = _load_plain(_verb_raisers_trans_path)
+_verb_raisers_extraposition = _load_plain(_verb_raisers_extraposition_path)
 
 # _adverbs = _load_plain(_adv_path)
-# _ipp_intransitive_infinitive_verbs = _load_plain(_ipp_itv_path)
-# _ipp_transitive_infinitive_verbs = _load_plain(_ipp_tv_path)
-# _ipp_intransitive_infinitive_te_verbs = _load_plain(_ipp_itv_te_path)
-_verb_raisers_extraposition = _load_plain(_verb_raisers_extraposition_path)
+
 
 
 # Lexical categories/representatives
@@ -81,87 +82,67 @@ _verb_raisers_extraposition = _load_plain(_verb_raisers_extraposition_path)
 # inf3(d9) --> [d9]. % verzoeken+indirect object, extraposition, indirect object=understood su of vc -> DONE (obj control verbs)
 # inf4(d12) --> [d12]. % beloven+indirect object, extraposition, subject=understood su of vc -> DONE (subj control verbs)
 
-# lex(slapen,inf0).
-# lex(dromen,inf0).
-# lex(eten,inf1).
-# lex(ontmoeten,inf1a).
-# lex(genezen,inf1a).
-# lex(raadplegen,inf1a).
-# lex(moeten,ivr0).
-# lex(kunnen,ivr0).
-# lex(doen,ivr1).
-# lex(zien,ivr1).
-# lex(hem,obj1_).
-# lex(iemand,obj1_).
-# lex(trachten,ivr2).
-# lex(pogen,ivr2).
-# lex(trachten,inf2).
-# lex(pogen,inf2).
+
 class Lexicon:
     @staticmethod
     def inf0():
-        return lambda _: list(iter(_intrans_inf_verbs))
+        return list(iter(_intrans_inf_verbs))
 
     @staticmethod
     def inf1():
-        return list(iter(_))
+        return list(iter(_trans_inf_verbs_inanimate_obj))
 
     @staticmethod
     def inf1a():
-        return lambda _: list(iter(_trans_inf_verbs_animate_obj))
+        return list(iter(_trans_inf_verbs_animate_obj))
 
     @staticmethod
     def ivr0():
-        return lambda _: list(iter(_verb_raisers_intrans))
+        return list(iter(_verb_raisers_intrans))
 
     @staticmethod
     def ivr1():
-        return lambda _: list(iter(_verb_raisers_trans))
+        return list(iter(_verb_raisers_trans))
 
     @staticmethod
     # IVR2 = INF2, for verbs that occur both in verb clusters and in extraposition
     def ivr2():
-        return lambda _: list(iter(_verb_raisers_extraposition))
+        return list(iter(_verb_raisers_extraposition))
 
     @staticmethod
     def inf2():
-        return lambda _: list(iter(_verb_raisers_extraposition))
+        return list(iter(_verb_raisers_extraposition))
 
     @staticmethod
     def inf3():
-        inf3idict = {Lexicon.obj2()(v) for v in list(iter(_obj_control_verbs_inf))}
-        def f(verb) -> list[str]: return inf3idict[verb]
-        return f
+        return list(iter(_obj_control_verbs_inf))
 
     @staticmethod
     def inf4():
-        inf4idict = {Lexicon.obj2()(v) for v in list(iter(_obj_control_verbs_inf))}
-        def f(verb) -> list[str]: return inf4idict[verb]
-        return f
+        return list(iter(_subj_control_verbs_inf))
 
     @staticmethod
     def obj1a():
-        return lambda _: list(iter(_names))
+        # We could also use _de_personen here
+        return list(iter(_names))
 
     @staticmethod
-    def obj1i() -> Callable[[str], list[str]]:
-        # TODO: map transitive infinitives with an inanimate object to lists of said objects
-        inf1idict = ...
-        def f(verb) -> list[str]: return inf1idict[verb]
-        return f
+    def obj1i()
+        return list(iter(_inanimate_objects))
 
     @staticmethod
     def obj2():
-        return lambda _: list(iter(_names))
+        # We could also use _de_personen here
+        return list(iter(_names))
 
     @staticmethod
     def pref1():
-        return lambda _: ["hij"]
+        return ["hij"]
 
     @staticmethod
     def pref2():
-        return lambda _: ["zal"]
+        return ["zal"]
 
     @staticmethod
     def te():
-        return lambda _: ["te"]
+        return ["te"]
