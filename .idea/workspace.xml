@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of lexicon">
-      <change afterPath="$PROJECT_DIR$/data/verb_raisers_intrans.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/verb_raisers_trans.txt" afterDir="false" />
+    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of lexicon with VR verbs">
+      <change afterPath="$PROJECT_DIR$/data/trans_infinitives_inanimate_object.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/nvg_werkwoorden.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/verb_raisers_extraposition.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/infinitives.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/intrans_infinitives.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ipp_excluded.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ipp_intrans_infinitives.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ipp_intrans_infinitives_te.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/ipp_trans_infinitives.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/person_transitive_verbs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/trans_infinitives_animate_object.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lexicon.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicon.py" afterDir="false" />
     </list>
-    <list id="39e46e78-13ae-4bde-a7bc-2399201dae3c" name="Changes by kokos" comment="">
-      <change beforePath="$PROJECT_DIR$/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lexicon.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicon.py" afterDir="false" />
-    </list>
+    <list id="39e46e78-13ae-4bde-a7bc-2399201dae3c" name="Changes by kokos" comment="Changes by kokos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,37 +35,6 @@
     <setting file="file://$PROJECT_DIR$/prolog/lambda_aux.pl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/main.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/data/de_personen.txt" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/lexicon.py">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="3" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="7" end1="7" start2="8" end2="11" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="9" end1="11" start2="13" end2="20" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="15" end1="16" start2="24" end2="25" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="28" end1="29" start2="37" end2="38" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="44" end1="46" start2="53" end2="59" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="50" end1="51" start2="63" end2="64" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="55" end1="56" start2="68" end2="69" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="57" end1="58" start2="70" end2="71" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="59" end1="62" start2="72" end2="75" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="63" end1="64" start2="76" end2="77" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="65" end1="69" start2="78" end2="82" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="73" end1="74" start2="86" end2="87" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="81" end1="82" start2="94" end2="95" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="85" end1="86" start2="98" end2="99" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="89" end1="90" start2="102" end2="103" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="92" end1="92" start2="105" end2="106" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="93" end1="94" start2="107" end2="108" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="97" end1="98" start2="111" end2="112" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="101" end1="102" start2="115" end2="118" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="105" end1="106" start2="121" end2="124" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="117" end1="118" start2="135" end2="135" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="125" end1="126" start2="142" end2="143" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="129" end1="130" start2="146" end2="147" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="133" end1="194" start2="150" end2="151" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectId" id="28hlUiorYwbN5dixARDgwIUVpY4" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -170,7 +140,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652371064457</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update of lexicon with VR verbs">
+      <created>1652687591583</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1652687591583</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes by kokos">
+      <created>1652687603036</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1652687603036</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,7 +177,9 @@
     <MESSAGE value="Update of Michael's code and ours" />
     <MESSAGE value="Update of Michael's sample output" />
     <MESSAGE value="Update of lexicon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update of lexicon" />
+    <MESSAGE value="Update of lexicon with VR verbs" />
+    <MESSAGE value="Changes by kokos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by kokos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

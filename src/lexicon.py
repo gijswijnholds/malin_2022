@@ -7,21 +7,20 @@ _names_path = os.path.join(_data_dir, 'Top_eerste_voornamen_NL_2010.csv')
 _de_noun_path = os.path.join(_data_dir, 'de_personen.txt')
 _het_noun_path = os.path.join(_data_dir, 'het_personen.txt')
 
-_trans_inf_animate_obj_path = os.path.join(_data_dir, 'person_transitive_verbs.txt')
+_trans_inf_animate_obj_path = os.path.join(_data_dir, 'trans_infinitives_animate_object.txt')
+_trans_inf_inanimate_obj_path = os.path.join(_data_dir, 'trans_infinitives_inanimate_object.txt')
 
 _obj_cv_path = os.path.join(_data_dir, 'obj_control_verbs.txt')
 _sub_cv_path = os.path.join(_data_dir, 'sub_control_verbs.txt')
 
-_intrans_inf_verbs_path = os.path.join(_data_dir, 'infinitives.txt')
+_intrans_inf_verbs_path = os.path.join(_data_dir, 'intrans_infinitives.txt')
 _verb_raisers_extraposition_path = os.path.join(_data_dir, 'verb_raisers_extraposition.txt')
 _verb_raisers_intrans_path = os.path.join(_data_dir, 'verb_raisers_intrans.txt')
 _verb_raisers_trans_path = os.path.join(_data_dir, 'verb_raisers_trans.txt')
 
 
 _adv_path = os.path.join(_data_dir, 'adverbs.txt')
-_ipp_itv_path = os.path.join(_data_dir, 'ipp_intrans_infinitives.txt')
-_ipp_tv_path = os.path.join(_data_dir, 'ipp_trans_infinitives.txt')
-_ipp_itv_te_path = os.path.join(_data_dir, 'ipp_intrans_infinitives_te.txt')
+
 
 
 
@@ -54,13 +53,14 @@ _sub_control_verbs_present, _sub_control_verbs_inf = _load_control_verbs(_sub_cv
 
 _intrans_inf_verbs = _load_plain(_intrans_inf_verbs_path)
 _trans_inf_verbs_animate_obj = _load_plain(_trans_inf_animate_obj_path)
+_trans_inf_verbs_inanimate_obj = _load_plain(_trans_inf_inanimate_obj_path)
 _verb_raisers_intrans = _load_plain(_verb_raisers_intrans_path)
 _verb_raisers_trans = _load_plain(_verb_raisers_trans_path)
 
-_adverbs = _load_plain(_adv_path)
-_ipp_intransitive_infinitive_verbs = _load_plain(_ipp_itv_path)
-_ipp_transitive_infinitive_verbs = _load_plain(_ipp_tv_path)
-_ipp_intransitive_infinitive_te_verbs = _load_plain(_ipp_itv_te_path)
+# _adverbs = _load_plain(_adv_path)
+# _ipp_intransitive_infinitive_verbs = _load_plain(_ipp_itv_path)
+# _ipp_transitive_infinitive_verbs = _load_plain(_ipp_tv_path)
+# _ipp_intransitive_infinitive_te_verbs = _load_plain(_ipp_itv_te_path)
 _verb_raisers_extraposition = _load_plain(_verb_raisers_extraposition_path)
 
 
@@ -81,6 +81,22 @@ _verb_raisers_extraposition = _load_plain(_verb_raisers_extraposition_path)
 # inf3(d9) --> [d9]. % verzoeken+indirect object, extraposition, indirect object=understood su of vc -> DONE (obj control verbs)
 # inf4(d12) --> [d12]. % beloven+indirect object, extraposition, subject=understood su of vc -> DONE (subj control verbs)
 
+# lex(slapen,inf0).
+# lex(dromen,inf0).
+# lex(eten,inf1).
+# lex(ontmoeten,inf1a).
+# lex(genezen,inf1a).
+# lex(raadplegen,inf1a).
+# lex(moeten,ivr0).
+# lex(kunnen,ivr0).
+# lex(doen,ivr1).
+# lex(zien,ivr1).
+# lex(hem,obj1_).
+# lex(iemand,obj1_).
+# lex(trachten,ivr2).
+# lex(pogen,ivr2).
+# lex(trachten,inf2).
+# lex(pogen,inf2).
 class Lexicon:
     @staticmethod
     def inf0():
