@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of Michael's sample output">
+    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of lexicon">
+      <change afterPath="$PROJECT_DIR$/data/verb_raisers_intrans.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/verb_raisers_trans.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prolog/dutchvr_cfg.pl" beforeDir="false" afterPath="$PROJECT_DIR$/prolog/dutchvr_cfg.pl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prolog/dutchvr_control.pl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/nvg_werkwoorden.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/verb_raisers_extraposition.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lexicon.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicon.py" afterDir="false" />
     </list>
     <list id="39e46e78-13ae-4bde-a7bc-2399201dae3c" name="Changes by kokos" comment="">
@@ -39,42 +39,30 @@
     <file path="$PROJECT_DIR$/src/lexicon.py">
       <ranges>
         <range start1="2" end1="2" start2="2" end2="3" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="28" end1="29" start2="29" end2="30" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="34" end1="35" start2="35" end2="37" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="36" end1="36" start2="38" end2="39" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="37" end1="38" start2="40" end2="42" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="51" end1="51" start2="55" end2="72" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="53" end1="55" start2="74" end2="76" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="57" end1="59" start2="78" end2="80" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="61" end1="63" start2="82" end2="84" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="65" end1="67" start2="86" end2="88" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="69" end1="71" start2="90" end2="92" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="73" end1="75" start2="94" end2="96" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="77" end1="79" start2="98" end2="100" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="81" end1="83" start2="102" end2="104" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="85" end1="87" start2="106" end2="108" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="89" end1="91" start2="110" end2="112" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="93" end1="95" start2="114" end2="119" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="97" end1="99" start2="121" end2="123" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="101" end1="103" start2="125" end2="127" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="105" end1="107" start2="129" end2="131" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="109" end1="111" start2="133" end2="195" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/generate.py">
-      <ranges>
-        <range start1="1" end1="2" start2="1" end2="2" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="3" end1="3" start2="3" end2="5" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="10" end1="10" start2="12" end2="13" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="22" end1="23" start2="25" end2="25" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="24" end1="27" start2="26" end2="41" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="28" end1="42" start2="42" end2="44" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="43" end1="43" start2="45" end2="46" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="44" end1="59" start2="47" end2="63" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
-        <range start1="64" end1="65" start2="68" end2="68" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="81" end1="83" start2="84" end2="90" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="89" end1="89" start2="96" end2="97" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
-        <range start1="91" end1="92" start2="99" end2="100" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="7" end1="7" start2="8" end2="11" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="9" end1="11" start2="13" end2="20" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="15" end1="16" start2="24" end2="25" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="28" end1="29" start2="37" end2="38" changelist="39e46e78-13ae-4bde-a7bc-2399201dae3c" />
+        <range start1="44" end1="46" start2="53" end2="59" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="50" end1="51" start2="63" end2="64" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="55" end1="56" start2="68" end2="69" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="57" end1="58" start2="70" end2="71" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="59" end1="62" start2="72" end2="75" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="63" end1="64" start2="76" end2="77" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="65" end1="69" start2="78" end2="82" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="73" end1="74" start2="86" end2="87" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="81" end1="82" start2="94" end2="95" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="85" end1="86" start2="98" end2="99" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="89" end1="90" start2="102" end2="103" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="92" end1="92" start2="105" end2="106" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="93" end1="94" start2="107" end2="108" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="97" end1="98" start2="111" end2="112" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="101" end1="102" start2="115" end2="118" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="105" end1="106" start2="121" end2="124" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="117" end1="118" start2="135" end2="135" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="125" end1="126" start2="142" end2="143" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="129" end1="130" start2="146" end2="147" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
+        <range start1="133" end1="194" start2="150" end2="151" changelist="17edc9fb-0b10-460b-a79c-11f9eb6bda74" />
       </ranges>
     </file>
   </component>
@@ -88,11 +76,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/prolog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/prolog" />
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -174,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652366760490</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update of lexicon">
+      <created>1652371064457</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652371064457</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -196,7 +192,8 @@
     <MESSAGE value="Update of Michael's code" />
     <MESSAGE value="Update of Michael's code and ours" />
     <MESSAGE value="Update of Michael's sample output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update of Michael's sample output" />
+    <MESSAGE value="Update of lexicon" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update of lexicon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
