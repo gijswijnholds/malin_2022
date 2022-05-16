@@ -127,7 +127,7 @@ class Lexicon:
         return list(iter(_names))
 
     @staticmethod
-    def obj1i()
+    def obj1i():
         return list(iter(_inanimate_objects))
 
     @staticmethod

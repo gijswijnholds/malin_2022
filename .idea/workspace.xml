@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Update of lexicon with transitive infinitives">
-      <change afterPath="$PROJECT_DIR$/data/inanimate_objects.txt" afterDir="false" />
+    <list default="true" id="17edc9fb-0b10-460b-a79c-11f9eb6bda74" name="Default Changelist" comment="Added inanimate objects and verbs with inanimate objects, reduced Lexicon methods back to values">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/trans_infinitives_inanimate_object.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/trans_infinitives_inanimate_object.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lexicon.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexicon.py" afterDir="false" />
     </list>
     <list id="39e46e78-13ae-4bde-a7bc-2399201dae3c" name="Changes by kokos" comment="Changes by kokos" />
@@ -164,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652691788024</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added inanimate objects and verbs with inanimate objects, reduced Lexicon methods back to values">
+      <created>1652693009807</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652693009807</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +195,8 @@
     <MESSAGE value="Update of lexicon with VR verbs" />
     <MESSAGE value="Changes by kokos" />
     <MESSAGE value="Update of lexicon with transitive infinitives" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update of lexicon with transitive infinitives" />
+    <MESSAGE value="Added inanimate objects and verbs with inanimate objects, reduced Lexicon methods back to values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added inanimate objects and verbs with inanimate objects, reduced Lexicon methods back to values" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
