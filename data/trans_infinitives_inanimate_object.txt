@@ -1,5 +1,4 @@
 bevelen
-aanbevelen
 gebieden
 gelasten
 geven
@@ -20,9 +19,3 @@ zetten
 denken
 vinden
 zoeken
-meebrengen
-uitmaken
-uitsluiten
-uitleggen
-voorstellen
-opleveren
