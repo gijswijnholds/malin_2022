@@ -1,7 +1,7 @@
 from __future__ import annotations
 from enum import Enum, auto
 from typing import NamedTuple, TypeVar
-from .lexicon import Lexicon
+from src.lexicon import Lexicon
 import random
 import json
 
@@ -29,9 +29,9 @@ class Category(Enum):
     TE = (auto(), None)
 
     def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')
-    def is_noun(self) -> bool: return self.value is not None and not self.value
-    def is_verb(self) -> bool: return self.value is not None and self.value
-    def __repr__(self) -> str: return self.name
+    def is_noun(self) -> bool: return self.value[1] is not None and not self.value[1]
+    def is_verb(self) -> bool: return self.value[1] is not None and self.value[1]
+    def __repr__(self) -> str: return f'Category.{self.name}'
 
 
 # Canonical Constants
@@ -240,9 +240,24 @@ class Concrete:
         wordss = list(zip(*[try_unique_sample(choice, n) for choice in choices]))
         verb_indices = Concrete.to_indices(list(map(Category.is_verb, sample.sentence)))
         noun_indices = Concrete.to_indices(list(map(Category.is_noun, sample.sentence)))
-        matching = {verb_indices[sample.sentence.index(verb_cat)][0]: noun_indices[sample.sentence.index(noun_cat)][0]
-                    for verb_cat, noun_cat in sample.matchings}
+        matching = {vs[0]: noun_indices[sample.sentence.index(noun_cat)][0]
+                    for verb_cat, noun_cat in sample.matchings
+                    if (vs := verb_indices[sample.sentence.index(verb_cat)])}
         return [Concrete(sample, list(zip(noun_indices, verb_indices, words)), matching) for words in wordss]
+
+    def as_dict(self) -> dict:
+        return {'source': {'ast': repr(self.source.ast),
+                           'sentence': repr(self.source.sentence),
+                           'term': repr(self.source.term),
+                           'matching': repr(self.source.matchings)},
+                'realization': repr(self.realization),
+                'matching': repr(self.matching)}
+    
+    @staticmethod
+    def from_dict(d) -> Concrete:
+        source = Sample(ast=eval(d['source']['ast']), sentence=eval(d['source']['sentence']),
+                        term=eval(d['source']['term']), matchings=eval(d['source']['matching']))
+        return Concrete(source=source, realization=eval(d['realization']), matching=eval(d['matching']))
 
 
 def load_concrete_samples(path: str = './prolog/sample.txt', n: int = 10) -> list[Concrete]:
