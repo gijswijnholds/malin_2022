@@ -2,7 +2,7 @@ import os
 import csv
 from typing import Callable
 
-_data_dir = "./data"
+_data_dir = "../data"
 _names_path = os.path.join(_data_dir, 'Top_eerste_voornamen_NL_2010.csv')
 _de_noun_path = os.path.join(_data_dir, 'de_personen.txt')
 _het_noun_path = os.path.join(_data_dir, 'het_personen.txt')

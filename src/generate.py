@@ -3,6 +3,7 @@ from enum import Enum, auto
 from typing import NamedTuple, TypeVar
 from .lexicon import Lexicon
 import random
+import json
 
 Choices = list[str]
 
@@ -11,21 +12,21 @@ Choices = list[str]
 # Categories
 ########################################################################################################################
 class Category(Enum):
-    INF0 = True
-    INF1 = True
-    INF1A = True
-    IVR0 = True
-    IVR1 = True
-    IVR2 = True
-    INF2 = True
-    INF3 = True
-    INF4 = True
-    OBJ1A = False
-    OBJ1I = False
-    OBJ2 = False
-    PREF1 = False
-    PREF2 = True
-    TE = None
+    INF0 = (auto(), True)
+    INF1 = (auto(), True)
+    INF1A = (auto(), True)
+    IVR0 = (auto(), True)
+    IVR1 = (auto(), True)
+    IVR2 = (auto(), True)
+    INF2 = (auto(), True)
+    INF3 = (auto(), True)
+    INF4 = (auto(), True)
+    OBJ1A = (auto(), False)
+    OBJ1I = (auto(), False)
+    OBJ2 = (auto(), False)
+    PREF1 = (auto(), False)
+    PREF2 = (auto(), None)
+    TE = (auto(), None)
 
     def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')
     def is_noun(self) -> bool: return self.value is not None and not self.value
@@ -244,43 +245,19 @@ class Concrete:
         return [Concrete(sample, list(zip(noun_indices, verb_indices, words)), matching) for words in wordss]
 
 
-def main(path: str = './prolog/sample.txt', n: int = 10) -> list[Concrete]:
-    samples = load_samples(path)
-    concrete_samples = [Concrete.from_sample(s, n) for s in samples]
-    concrete_samples_flat = [c for s in concrete_samples for c in s]
-    return samples, concrete_samples, concrete_samples_flat
+def load_concrete_samples(path: str = './prolog/sample.txt', n: int = 10) -> list[Concrete]:
+    return [c for s in load_samples(path) for c in Concrete.from_sample(s, n)]
 
-# samples, concrete_samples, concrete_samples_flat = main()
-# results = [str(c[0].source.sentence) + '\n' + '\n'.join([str(s.realization) for s in c]) for c in concrete_samples]
-# with open('test.txt', 'w') as outf:
-#     outf.write('\n\n'.join(results))
+
+def dump_to_json(c_samples: list[Concrete], path: str):
+    with open(path, 'w') as f:
+        json.dump([c.as_dict() for c in c_samples], f, indent=4)
+
+
+def main(ipath: str = '../prolog/sample.txt', opath: str = '../output.json', n: int = 10):
+    return dump_to_json(load_concrete_samples(ipath, n), opath)
+
 
 if __name__ == '__main__':
-    from argparse import ArgumentParser
-    parser = ArgumentParser()
-    parser.add_argument('path', type=str, default='./prolog/sample.txt')
-    args = parser.parse_args()
-    main(args.path)
-
-c_samples = main()
-# c_samples[1].source
-# Sample(ast=(r0, (f0, d0)), sentence=[PREF1, PREF2, INF0], term=appl(appl(PREF2, condia(vc, INF0)), condia(su, PREF1)), matchings=[(PREF2, PREF1), (INF0, PREF1)])
-# c_samples[1].realization
-# ['hij', 'zal', 'gaan']
-
-# c_samples[532].source.sentence
-# Out[9]: [PREF1, PREF2, OBJ2, INF4, OBJ1A, TE, IVR1, INF0]
-# c_samples[532].realization
-# Out[8]: ['hij', 'zal', 'Clemens', 'zeggen', 'Jantje', 'te', 'doen', 'stoppen']
-
-
-# concrete_samples_flat[332].realization
-# Out[13]:
-# [([0], [], 'Said'),
-#  ([], [0], 'stoppen'),
-#  ([1], [], 'Emerentia'),
-#  ([], [1], 'verliezen'),
-#  ([], [], 'te'),
-#  ([], [2], 'stoppen'),
-#  ([], [3], 'stemmen')]
-#
+    random.seed(42)
+    main()
