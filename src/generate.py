@@ -1,32 +1,37 @@
 from __future__ import annotations
 from enum import Enum, auto
 from typing import NamedTuple, TypeVar
+from .lexicon import Lexicon
+import random
 
-Choices = TypeVar('Choices')
+Choices = list[str]
 
 
 ########################################################################################################################
 # Categories
 ########################################################################################################################
 class Category(Enum):
-    INF0 = auto()
-    INF1 = auto()
-    INF1A = auto()
-    IVR0 = auto()
-    IVR1 = auto()
-    IVR2 = auto()
-    INF2 = auto()
-    INF3 = auto()
-    INF4 = auto()
-    OBJ1A = auto()
-    OBJ1I = auto()
-    OBJ2 = auto()
-    PREF1 = auto()
-    PREF2 = auto()
-    TE = auto()
+    INF0 = True
+    INF1 = True
+    INF1A = True
+    IVR0 = True
+    IVR1 = True
+    IVR2 = True
+    INF2 = True
+    INF3 = True
+    INF4 = True
+    OBJ1A = False
+    OBJ1I = False
+    OBJ2 = False
+    PREF1 = False
+    PREF2 = True
+    TE = None
 
-    def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')  # todo
+    def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')
+    def is_noun(self) -> bool: return self.value is not None and not self.value
+    def is_verb(self) -> bool: return self.value is not None and self.value
     def __repr__(self) -> str: return self.name
+
 
 # Canonical Constants
 iets = Category.OBJ1I
@@ -164,7 +169,6 @@ vc = 'vc'
 su = 'su'
 obj1 = 'obj1'
 obj2 = 'obj2'
-...
 
 
 def appl(left, right) -> Application:
@@ -199,22 +203,57 @@ def load_samples(path: str) -> list[Sample]:
     return list(map(make_sample, data))
 
 
+def try_unique_sample(xs: list, n: int) -> list:
+    if len(xs) > n:
+        return random.sample(xs, n)
+    else:
+        return random.sample(xs, len(xs)) + [random.choice(xs) for _ in range(n - len(xs))]
+
+
 ########################################################################################################################
 # Concrete Surface Forms
 ########################################################################################################################
+NounIndices = list[int]
+VerbIndices = list[int]
+Word = str
+Realization = list[tuple[NounIndices, VerbIndices, Word]]
+Matching = dict[int, int]
+
+
 class Concrete:
-    source:         Sample
-    realization:    list[str]
+    def __init__(self, source: Sample, realization: Realization, matching: Matching):
+        assert len(realization) == len(source.sentence)
+        self.source = source
+        self.realization: Realization = realization
+        self.matching: Matching = matching
 
     @staticmethod
-    def from_sample(sample: Sample, n: int) -> Concrete:
+    def to_indices(xs: list[bool]) -> list[list[int]]:
+        num_members = iter(range(xs.count(True)))
+        indices = [[next(num_members)] if x else [] for x in xs]
+        return indices
+
+    @staticmethod
+    def from_sample(sample: Sample, n: int) -> list[Concrete]:
         choices: list[Choices] = [cat.to_lexicon() for cat in sample.sentence]
-        # todo: sampling and filtering logic here
-        ...
+        wordss = list(zip(*[try_unique_sample(choice, n) for choice in choices]))
+        verb_indices = Concrete.to_indices(list(map(Category.is_verb, sample.sentence)))
+        noun_indices = Concrete.to_indices(list(map(Category.is_noun, sample.sentence)))
+        matching = {verb_indices[sample.sentence.index(verb_cat)][0]: noun_indices[sample.sentence.index(noun_cat)][0]
+                    for verb_cat, noun_cat in sample.matchings}
+        return [Concrete(sample, list(zip(noun_indices, verb_indices, words)), matching) for words in wordss]
 
 
-def main(path: str = './prolog/sample.txt') -> list[Sample]: return load_samples(path)
+def main(path: str = './prolog/sample.txt', n: int = 10) -> list[Concrete]:
+    samples = load_samples(path)
+    concrete_samples = [Concrete.from_sample(s, n) for s in samples]
+    concrete_samples_flat = [c for s in concrete_samples for c in s]
+    return samples, concrete_samples, concrete_samples_flat
 
+# samples, concrete_samples, concrete_samples_flat = main()
+# results = [str(c[0].source.sentence) + '\n' + '\n'.join([str(s.realization) for s in c]) for c in concrete_samples]
+# with open('test.txt', 'w') as outf:
+#     outf.write('\n\n'.join(results))
 
 if __name__ == '__main__':
     from argparse import ArgumentParser
@@ -222,3 +261,26 @@ if __name__ == '__main__':
     parser.add_argument('path', type=str, default='./prolog/sample.txt')
     args = parser.parse_args()
     main(args.path)
+
+c_samples = main()
+# c_samples[1].source
+# Sample(ast=(r0, (f0, d0)), sentence=[PREF1, PREF2, INF0], term=appl(appl(PREF2, condia(vc, INF0)), condia(su, PREF1)), matchings=[(PREF2, PREF1), (INF0, PREF1)])
+# c_samples[1].realization
+# ['hij', 'zal', 'gaan']
+
+# c_samples[532].source.sentence
+# Out[9]: [PREF1, PREF2, OBJ2, INF4, OBJ1A, TE, IVR1, INF0]
+# c_samples[532].realization
+# Out[8]: ['hij', 'zal', 'Clemens', 'zeggen', 'Jantje', 'te', 'doen', 'stoppen']
+
+
+# concrete_samples_flat[332].realization
+# Out[13]:
+# [([0], [], 'Said'),
+#  ([], [0], 'stoppen'),
+#  ([1], [], 'Emerentia'),
+#  ([], [1], 'verliezen'),
+#  ([], [], 'te'),
+#  ([], [2], 'stoppen'),
+#  ([], [3], 'stemmen')]
+#
