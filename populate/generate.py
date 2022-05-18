@@ -1,7 +1,7 @@
 from __future__ import annotations
 from enum import Enum, auto
 from typing import NamedTuple, TypeVar
-from src.lexicon import Lexicon
+from populate.lexicon import Lexicon
 import random
 import json
 
@@ -261,7 +261,8 @@ class Concrete:
 
 
 def load_concrete_samples(path: str = './prolog/sample.txt', n: int = 10) -> list[Concrete]:
-    return [c for s in load_samples(path) for c in Concrete.from_sample(s, n)]
+    return [c for s in load_samples(path) for c in Concrete.from_sample(s, n)
+            if len(set(c.matching.values())) > 1]
 
 
 def dump_to_json(c_samples: list[Concrete], path: str):
@@ -269,7 +270,7 @@ def dump_to_json(c_samples: list[Concrete], path: str):
         json.dump([c.as_dict() for c in c_samples], f, indent=4)
 
 
-def main(ipath: str = '../prolog/sample.txt', opath: str = '../output.json', n: int = 10):
+def main(ipath: str = '../prolog/sample.txt', opath: str = '../populated.json', n: int = 10):
     return dump_to_json(load_concrete_samples(ipath, n), opath)
 
 
