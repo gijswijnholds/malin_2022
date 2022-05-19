@@ -23,14 +23,12 @@ class Context(NamedTuple):
 
     @staticmethod
     def count_flippers(matchings: list[tuple[Category, Category]]) -> int:
-        # candidates = {Category.IVR1, Category.INF3, Category.INF4}
+        # todo: make sure this is working
         return len(set([n for _, n in matchings])) - 1
-        # return sum(c in candidates for c in cats)
 
     @staticmethod
     def from_sample(sample: ProcessedSample, index: int) -> Context:
         source = sample.compact.source
-        # todo: does dict respect original order? YES -> DONE
         # TODO: take care to exclude results for sentence with only 1 noun
         # TODO: take care to exclude the (PREF2, PREF1) matching
         ast, term, sentence, matching = (eval(source['ast']), eval(source['term']),
@@ -72,14 +70,35 @@ def group_by_semterm(
     return {term: gather(lambda c: c.term == term, preds) for term in unique_terms}
 
 
+def group_by_sentence(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[Term, list[tuple[tuple[bool, ...], Context]]]:
+    unique_sents = set(tuple(c.sentence for _, c in preds))
+    return {sent: gather(lambda c: c.sentence == sent, preds) for sent in unique_sents}
+
+
 def group_by_ast(preds: list[tuple[tuple[bool, ...], Context]]) -> dict[AST, list[tuple[tuple[bool, ...], Context]]]:
     unique_asts = set(c.ast for _, c in preds)
     return {ast: gather(lambda c: c.ast == ast, preds) for ast in unique_asts}
 
 
-def group_by_different_derivations(
+def group_semterms_by_different_derivations(
         preds: list[tuple[tuple[bool, ...], Context]]) -> dict[Term, dict[AST, tuple[bool, ...]]]:
     by_term: dict[Term, list[tuple[tuple[bool, ...], Context]]] = group_by_semterm(preds)
     by_pair: dict[Term, dict[AST, list[tuple[tuple[bool, ...], Context]]]] = {k: group_by_ast(vs) for k, vs in by_term.items()}
     return {term: {ast: sum((sum(left, ()) for left, right in vs), ()) for ast, vs in inner_dict.items()}
             for term, inner_dict in by_pair.items() if len(inner_dict) > 1}
+
+
+def group_sentences_by_different_derivations(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[Term, dict[AST, tuple[bool, ...]]]:
+    by_sent = group_by_semterm(preds)
+    by_pair = {k: group_by_ast(vs) for k, vs in by_sent.items()}
+    return {term: {ast: sum((sum(left, ()) for left, right in vs), ()) for ast, vs in inner_dict.items()}
+            for term, inner_dict in by_pair.items() if len(inner_dict) > 1}
+
+
+def group_by_num_flippers(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[int, tuple[tuple[bool, ...]]]:
+    flippers = set(c.num_flippers for _, c in preds)
+    return {flipper: sum((vs for vs, _ in gather(lambda c: c.num_flippers == flipper, preds)), ())
+            for flipper in flippers}
