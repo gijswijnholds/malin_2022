@@ -1,7 +1,7 @@
 from __future__ import annotations
 from enum import Enum, auto
-from typing import NamedTuple, TypeVar
-from populate.lexicon import Lexicon
+from typing import NamedTuple
+from src.populate.lexicon import Lexicon
 import random
 import json
 
@@ -25,13 +25,15 @@ class Category(Enum):
     OBJ1I = (auto(), False)
     OBJ2 = (auto(), False)
     PREF1 = (auto(), False)
-    PREF2 = (auto(), None)
+    PREF2 = (auto(), True)
     TE = (auto(), None)
 
     def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')
     def is_noun(self) -> bool: return self.value[1] is not None and not self.value[1]
     def is_verb(self) -> bool: return self.value[1] is not None and self.value[1]
     def __repr__(self) -> str: return f'Category.{self.name}'
+    def __eq__(self, other) -> bool: return isinstance(other, Category) and self.name == other.name
+    def __hash__(self) -> int: return hash(self.name)
 
 
 # Canonical Constants
@@ -59,6 +61,8 @@ class AST:
     def __matmul__(self, other) -> RuleTree: return RuleTree(self, other)
     def __len__(self) -> int: raise NotImplementedError
     def __repr__(self) -> str: raise NotImplementedError
+    def __eq__(self, other) -> bool: raise NotImplementedError
+    def __hash__(self) -> int: raise NotImplementedError
 
 
 class Rule(AST, Enum):
@@ -97,12 +101,20 @@ class Rule(AST, Enum):
 
     def __repr__(self) -> str: return self.name
     def __len__(self) -> int: return 0
+    def __eq__(self, other) ->  bool: return isinstance(other, Rule) and self.name == other.name
+    def __hash__(self) -> int: return hash(self.name)
 
 
 class RuleTree(AST):
     def __init__(self, left: AST, right: AST): self.left = left; self.right = right
     def __repr__(self) -> str: return f'({repr(self.left)}, {repr(self.right)})'
     def __len__(self) -> int: return 1 + max(len(self.left), len(self.right))
+
+    def __eq__(self, other) -> bool:
+        return isinstance(other, RuleTree) and self.left == other.left and self.right == other.right
+
+    def __hash__(self) -> int:
+        return hash((self.left, self.right))
 
 
 # Rule shortcuts
@@ -146,6 +158,8 @@ x9 = Rule.x9
 class Term:
     def __len__(self) -> int: raise NotImplementedError
     def __repr__(self) -> str: raise NotImplementedError
+    def __hash__(self) -> int: raise NotImplementedError
+    def __eq__(self, other) -> bool: raise NotImplementedError
 
 
 class Application(Term):
@@ -156,6 +170,11 @@ class Application(Term):
     def __len__(self) -> int: return 1 + max(len(self.function), len(self.argument))
     def __repr__(self) -> str: return f'appl({repr(self.function)}, {repr(self.argument)})'
 
+    def __eq__(self, other) -> bool:
+        return isinstance(other, Application) and self.function == other.function and self.argument == other.argument
+
+    def __hash__(self) -> int: return hash((self.function, self.argument))
+
 
 class DiaElim(Term):
     def __init__(self, diamond: str, body: Term | Category):
@@ -164,6 +183,11 @@ class DiaElim(Term):
 
     def __len__(self) -> int: return len(self.body)
     def __repr__(self) -> str: return f'condia({self.diamond}, {repr(self.body)})'
+
+    def __eq__(self, other) -> bool:
+        return isinstance(other, DiaElim) and self.diamond == other.diamond and self.body == other.body
+
+    def __hash__(self) -> int: return hash((self.diamond, self.body))
 
 
 vc = 'vc'
@@ -190,11 +214,13 @@ class Sample(NamedTuple):
     matchings:  list[tuple[Category, Category]]
 
 
+def eval_ast(line: str) -> AST: return eval(line)
+def eval_matchings(line: str) -> list[tuple[Category, Category]]: return eval(line)
+def eval_sentence(line: str) -> list[Category]: return list(map(eval, line.split()))
+def eval_semterm(line: str) -> Term: return eval(line)
+
+
 def make_sample(lines: list[str]) -> Sample:
-    def eval_ast(line: str) -> AST: return eval(line)
-    def eval_matchings(line: str) -> list[tuple[Category, Category]]: return eval(line)
-    def eval_sentence(line: str) -> list[Category]: return list(map(eval, line.split()))
-    def eval_semterm(line: str) -> Term: return eval(line)
     return Sample(*[f(x) for f, x in zip([eval_ast, eval_sentence, eval_semterm, eval_matchings], lines)])
 
 
@@ -261,19 +287,9 @@ class Concrete:
 
 
 def load_concrete_samples(path: str = './prolog/sample.txt', n: int = 10) -> list[Concrete]:
-    return [c for s in load_samples(path) for c in Concrete.from_sample(s, n)
-            if len(set(c.matching.values())) > 1]
+    return [c for s in load_samples(path) for c in Concrete.from_sample(s, n)]
 
 
 def dump_to_json(c_samples: list[Concrete], path: str):
     with open(path, 'w') as f:
         json.dump([c.as_dict() for c in c_samples], f, indent=4)
-
-
-def main(ipath: str = '../prolog/sample.txt', opath: str = '../populated.json', n: int = 10):
-    return dump_to_json(load_concrete_samples(ipath, n), opath)
-
-
-if __name__ == '__main__':
-    random.seed(42)
-    main()
