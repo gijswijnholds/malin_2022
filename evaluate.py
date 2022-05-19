@@ -58,7 +58,7 @@ def do_everything(data_dir: str, bert_names: list[str], weight_dir: str, device:
 
 
 if __name__ == '__main__':
-    results = do_everything('../', bert_names=[bertje_name], weight_dir='./evaluation/weights')
+    results = do_everything('/', bert_names=[bertje_name], weight_dir='./evaluation/weights')
     import pickle
-    with open('./results.p', 'wb') as f:
+    with open('results.p', 'wb') as f:
         pickle.dump(results, f)
