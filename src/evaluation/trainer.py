@@ -122,7 +122,7 @@ class Trainer:
         input_ids, input_masks, verb_spans, noun_spans, _ = batch
         predictions, vn_mask = self.model.forward(
             input_ids.to(self.device), input_masks.to(self.device), verb_spans, noun_spans)
-        return dense_matches(predictions, vn_mask)
+        return dense_matches(predictions.sigmoid(), vn_mask)
 
     @no_grad()
     def predict_epoch(self) -> list[list[int]]:

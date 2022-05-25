@@ -3,7 +3,7 @@ from .preprocessing import SpanDataset, ProcessedSample
 from ..populate.generate import *
 
 
-def analysis(test_data: SpanDataset, predictions: list[list[int]]) -> list[tuple[bool, Context]]:
+def contextualize_results(test_data: SpanDataset, predictions: list[list[int]]) -> list[tuple[bool, Context]]:
     return [(pred == true, Context.from_sample(sample, index))
             for sample, preds in zip(test_data, predictions)
             for index, (pred, true) in enumerate(zip(preds, sample.compact.labels))]
@@ -15,11 +15,16 @@ def aggr_torch_seeds(results: tuple[list[tuple[bool, Context]], ...]) -> list[tu
 
 class Context(NamedTuple):
     category:       Category
+    dominated_by:   Category | None
     word:           str
     num_flippers:   int
     term:           Term
     ast:            AST
     sentence:       list[Category]
+
+    def num_nouns(self) -> int: return sum([c.is_noun() for c in self.sentence])
+    def num_verbs(self) -> int: return sum([c.is_verb() for c in self.sentence])
+    def easy(self) -> bool: return self.category == Category.PREF2 or self.num_nouns() == 1
 
     @staticmethod
     def count_flippers(matchings: list[tuple[Category, Category]]) -> int:
@@ -37,6 +42,8 @@ class Context(NamedTuple):
         num_flippers = Context.count_flippers(matching[:sentence.index(verb_category) + 1])
         word = sample.compact.sentence[sentence.index(verb_category)]
         return Context(category=verb_category,
+                       dominated_by=next((v for v in sentence[sentence.index(verb_category)-1::-1] if v.is_verb()),
+                                         None),
                        word=word,
                        num_flippers=num_flippers,
                        term=term,
@@ -44,8 +51,17 @@ class Context(NamedTuple):
                        sentence=sentence)
 
 
+def is_raiser(c: Category) -> bool: return c in [Category.IVR0, Category.IVR1, Category.IVR2]
+def is_xpos(c: Category) -> bool: return c in [Category.INF2, Category.INF3, Category.INF4]
+def is_inf(c: Category) -> bool: return c in [Category.INF0, Category.INF1, Category.INF1A]
+
+
 def gather(fn, preds: list[tuple[tuple[bool, ...], Context]]) -> list[tuple[tuple[bool, ...], Context]]:
     return [(ps, c) for (ps, c) in preds if fn(c)]
+
+
+def group_by_word(preds: list[tuple[tuple[bool, ...], Context]]) -> dict[str, list[tuple[tuple[bool, ...], Context]]]:
+    return {word: gather(lambda c: c.word == word, preds) for word in set(c.word for _, c in preds)}
 
 
 def group_by_verb_category(preds: list[tuple[tuple[bool, ...], Context]]) -> dict[Category, tuple[bool, ...]]:
@@ -53,15 +69,17 @@ def group_by_verb_category(preds: list[tuple[tuple[bool, ...], Context]]) -> dic
             for category in Category}
 
 
-def group_by_verbal_type(gathered_by_cat: dict[Category, tuple[bool, ...]]) -> tuple[tuple[bool, ...],
-                                                                                     tuple[bool, ...],
-                                                                                     tuple[bool, ...]]:
-    def is_raiser(c: Category) -> bool: return c in [Category.IVR0, Category.IVR1, Category.IVR2]
-    def is_xpos(c: Category) -> bool: return c in [Category.INF2, Category.INF3, Category.INF4]
-    def is_inf(c: Category) -> bool: return c in [Category.INF0, Category.INF1, Category.INF1A]
-    return (sum((vs for k, vs in gathered_by_cat.items() if is_raiser(k)), ()),
-            sum((vs for k, vs in gathered_by_cat.items() if is_xpos(k)), ()),
-            sum((vs for k, vs in gathered_by_cat.items() if is_inf(k)), ()))
+def group_by_verbal_type(preds: list[tuple[tuple[bool, ...], Context]]) \
+        -> dict[str, list[tuple[tuple[bool, ...], Context]]]:
+    return {'raiser': gather(lambda c: is_raiser(c.category), preds),
+            'xpos': gather(lambda c: is_xpos(c.category), preds),
+            'inf': gather(lambda c: is_inf(c.category), preds)}
+
+
+def group_by_head_type(preds: list[tuple[tuple[bool, ...], Context]]) \
+        -> dict[str, list[tuple[tuple[bool, ...], Context]]]:
+    return {'raiser': gather(lambda c: is_raiser(c.dominated_by), preds),
+            'xpos': gather(lambda c: is_xpos(c.dominated_by), preds)}
 
 
 def group_by_semterm(
@@ -98,7 +116,52 @@ def group_sentences_by_different_derivations(
 
 
 def group_by_num_flippers(
-        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[int, tuple[tuple[bool, ...]]]:
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[int, list[tuple[tuple[bool, ...], Context]]]:
     flippers = set(c.num_flippers for _, c in preds)
-    return {flipper: sum((vs for vs, _ in gather(lambda c: c.num_flippers == flipper, preds)), ())
-            for flipper in flippers}
+    return {flipper: gather(lambda c: c.num_flippers == flipper, preds) for flipper in flippers}
+
+
+def group_by_num_nouns(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[int, list[tuple[tuple[bool, ...], Context]]]:
+    return {n: gather(lambda c: c.num_nouns() == n, preds) for n in set(c.num_nouns() for _, c in preds)}
+
+
+def group_by_num_verbs(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[int, list[tuple[tuple[bool, ...], Context]]]:
+    return {n: gather(lambda c: c.num_verbs() == n, preds) for n in set(c.num_verbs() for _, c in preds)}
+
+
+def filter_simple(preds: list[tuple[tuple[bool, ...], Context]]) -> list[tuple[tuple[bool, ...], Context]]:
+    return [(ps, c) for ps, c in preds if not Context.easy(c)]
+
+
+def stats(xs: list[tuple[tuple[bool, ...], Context]]) -> tuple[float, float, int]:
+    bs, ac = list(zip(*((1/Context.num_nouns(c), p) for ps, c in xs for p in ps)))
+    return sum(bs)/len(bs), sum(ac)/len(ac), len(bs)
+
+
+def analyze(aggregated: list[tuple[tuple[bool, ...], Context]]) -> None:
+    def p(xs: list[tuple[tuple[bool, ...], Context]]) -> str:
+        bs, ac, tot = stats(xs)
+        return f'{ac} {bs} {tot}'
+
+    aggregated = filter_simple(aggregated)
+    by_num_flippers = group_by_num_flippers(aggregated)
+    print('=' * 64)
+    for k, vs in by_num_flippers.items(): print(f'{k}: {p(vs)}')
+    by_verbal_type = group_by_verbal_type(aggregated)
+    print('=' * 64)
+    for k, vs in by_verbal_type.items(): print(f'{k}: {p(vs)}')
+    by_num_nouns = group_by_num_nouns(aggregated)
+    print('=' * 64)
+    for k, vs in by_num_nouns.items(): print(f'{k}: {p(vs)}')
+    by_num_verbs = group_by_num_verbs(aggregated)
+    print('=' * 64)
+    for k, vs in by_num_verbs.items(): print(f'{k}: {p(vs)}')
+    by_word = group_by_word(aggregated)
+    print('=' * 64)
+    for k, vs in by_word.items(): print(f'{k}: {p(vs)}')
+    by_head = group_by_head_type(aggregated)
+    print('=' * 64)
+    for k, vs in by_head.items(): print(f'{k}: {p(vs)}')
+

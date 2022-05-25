@@ -5,7 +5,7 @@ import torch
 from src.evaluation.sparse import SparseVA
 from src.evaluation.preprocessing import prepare_dataset
 from src.evaluation.trainer import Trainer, make_tester, Maybe
-from src.evaluation.analysis import analysis, Context, aggr_torch_seeds
+from src.evaluation.analysis import contextualize_results, Context, aggr_torch_seeds
 from src.evaluation.model_names import bertje_name, robbert_name
 
 GLOBAL_SEEDS = [3, 7, 42]
@@ -38,7 +38,7 @@ def test_probe(data_file: str, bert_name: str, weight_path: str, device: str = '
     _, seed, epoch = weight_path.split('/')[-1].split('_')
     print(f'Testing with seed {seed} @ epoch {epoch}')
     trainer = setup_trainer(data_file, bert_name, True, device=device, model_path=weight_path)
-    return analysis(trainer.test_loader.dataset, trainer.predict_epoch())
+    return contextualize_results(trainer.test_loader.dataset, trainer.predict_epoch())
 
 
 def do_everything(data_dir: str, bert_names: list[str], weight_dir: str, device: str = 'cuda') -> dict:
