@@ -39,7 +39,7 @@ class Context(NamedTuple):
         ast, term, sentence, matching = (eval(source['ast']), eval(source['term']),
                                          eval(source['sentence']), eval(source['matching']))
         verb_category, noun_category = matching[index]
-        num_flippers = Context.count_flippers(matching[:sentence.index(verb_category) + 1])
+        num_flippers = Context.count_flippers(matching[:index + 1])
         word = sample.compact.sentence[sentence.index(verb_category)]
         return Context(category=verb_category,
                        dominated_by=next((v for v in sentence[sentence.index(verb_category)-1::-1] if v.is_verb()),
