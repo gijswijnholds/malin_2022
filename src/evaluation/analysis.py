@@ -28,7 +28,6 @@ class Context(NamedTuple):
 
     @staticmethod
     def count_flippers(matchings: list[tuple[Category, Category]]) -> int:
-        # todo: make sure this is working
         return len(set([n for _, n in matchings])) - 1
 
     @staticmethod
@@ -53,6 +52,7 @@ class Context(NamedTuple):
 
 def is_raiser(c: Category) -> bool: return c in [Category.IVR0, Category.IVR1, Category.IVR2]
 def is_xpos(c: Category) -> bool: return c in [Category.INF2, Category.INF3, Category.INF4]
+def is_pref2(c: Category) -> bool: return c == Category.PREF2
 def is_inf(c: Category) -> bool: return c in [Category.INF0, Category.INF1, Category.INF1A]
 
 
@@ -79,7 +79,8 @@ def group_by_verbal_type(preds: list[tuple[tuple[bool, ...], Context]]) \
 def group_by_head_type(preds: list[tuple[tuple[bool, ...], Context]]) \
         -> dict[str, list[tuple[tuple[bool, ...], Context]]]:
     return {'raiser': gather(lambda c: is_raiser(c.dominated_by), preds),
-            'xpos': gather(lambda c: is_xpos(c.dominated_by), preds)}
+            'xpos': gather(lambda c: is_xpos(c.dominated_by), preds),
+            'undom': gather(lambda c: is_pref2(c.dominated_by), preds)}
 
 
 def group_by_semterm(
@@ -146,6 +147,8 @@ def analyze(aggregated: list[tuple[tuple[bool, ...], Context]]) -> None:
         return f'{ac} {bs} {tot}'
 
     aggregated = filter_simple(aggregated)
+    total = p(aggregated)
+    print(f'{total}: {p(total)}')
     by_num_flippers = group_by_num_flippers(aggregated)
     print('=' * 64)
     for k, vs in by_num_flippers.items(): print(f'{k}: {p(vs)}')
@@ -158,10 +161,26 @@ def analyze(aggregated: list[tuple[tuple[bool, ...], Context]]) -> None:
     by_num_verbs = group_by_num_verbs(aggregated)
     print('=' * 64)
     for k, vs in by_num_verbs.items(): print(f'{k}: {p(vs)}')
+    def has_multiple(results: dict[str, list[tuple[tuple[bool, ...], Context]]]):
+        return len([l for l in map(len, results.values()) if l]) > 1
     by_word = group_by_word(aggregated)
+    for k, vs in by_word.items():
+        by_word_and_cat = group_by_verbal_type(vs)
+        print(f'{k}: {p(vs)}')
+        if has_multiple(by_word_and_cat):
+            for k2, vs2 in by_word_and_cat.items():
+                if len(vs2) > 1:
+                    print(f'\t\t{k2}: {p(vs2)}')
+    # by_word_and_cat = {k: group_by_verbal_type(vs) for k, vs in by_word.items()}
+    # by_word_and_cat_count = {k: [len(vs2) for k2, vs2 in vs.items()] for k, vs in by_word_and_cat.items()}
+    # words_with_multiple = [k for k in by_word_and_cat_count if len([v for v in by_word_and_cat_count[k] if v != 0]) > 1]
     print('=' * 64)
     for k, vs in by_word.items(): print(f'{k}: {p(vs)}')
     by_head = group_by_head_type(aggregated)
     print('=' * 64)
-    for k, vs in by_head.items(): print(f'{k}: {p(vs)}')
-
+    for k, vs in by_head.items():
+        print(f'{k}: {p(vs)}')
+        head_by_verbal_type = group_by_verbal_type(vs)
+        for k2, vs2 in head_by_verbal_type.items():
+            print(f'\t\t{k2}: {p(vs2)}')
+    print('=' * 64)

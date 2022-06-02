@@ -1,4 +1,4 @@
-from transformers import AutoTokenizer, TOKENIZER_MAPPING
+from transformers import AutoTokenizer
 from .model_names import bertje_name
 from .data_reader import CompactSample, read_file
 from typing import NamedTuple
@@ -19,7 +19,7 @@ class ProcessedSample(NamedTuple):
         assert len(self.tokens) == len(self.verb_spans[0])
 
 
-def create_tokenizer(tokenizer_name: str = bertje_name) -> TOKENIZER_MAPPING:
+def create_tokenizer(tokenizer_name: str = bertje_name):
     return AutoTokenizer.from_pretrained(tokenizer_name)
 
 
@@ -37,7 +37,7 @@ def capitalize_and_punctuate(vss: list[list[int]], nss: list[list[int]], ws: lis
 
 
 def tokenize_compact(
-        tokenizer: TOKENIZER_MAPPING,
+        tokenizer,
         compact_sample: CompactSample) -> ProcessedSample:
     cls_token_id = tokenizer.cls_token_id
     sep_token_id = tokenizer.sep_token_id
@@ -50,7 +50,7 @@ def tokenize_compact(
 
 
 def tokenize_compacts(
-        tokenizer: TOKENIZER_MAPPING,
+        tokenizer,
         data: list[CompactSample]) -> list[ProcessedSample]:
     def tokenize(sample: CompactSample):
         return tokenize_compact(tokenizer, sample)
