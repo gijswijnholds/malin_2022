@@ -1,4 +1,3 @@
-
 r0@(f0@d0)
 hij zal vertrekken
 appl(appl(zal,condia(vc,vertrekken)),condia(su,hij))
@@ -184,6 +183,11 @@ hij zal dreigen haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(laten,hij),(vertrekken,haar)]
 
+x3@(x0@d7)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal dreigen te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(vertrekken,hij)]
+
 x3@(x5@d10@d9)@(h1@(g0@(f0@d0)@d2))
 hij zal hun verzoeken te willen vertrekken
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))),condia(su,hij))
@@ -239,6 +243,16 @@ hij zal dreigen haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(laten,hij),(zeggen,haar)]
 
+x3@(x0@d7)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal dreigen iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(zeggen,hij)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal dreigen haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(ontmoeten,hij)]
+
 x3@(x5@d10@d9)@(h1@(g0@(f1@d5@d1)@d2))
 hij zal hun verzoeken iets te willen zeggen
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj2,hun)))),condia(su,hij))
@@ -254,6 +268,11 @@ hij zal hun verzoeken haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(verzoeken,hij),(laten,hun),(vertrekken,haar)]
 
+x3@(x5@d10@d9)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal hun verzoeken te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(vertrekken,hun)]
+
 x3@(x9@d10@d12)@(h1@(g0@(f1@d5@d1)@d2))
 hij zal hun beloven iets te willen zeggen
 appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj2,hun)))),condia(su,hij))
@@ -268,6 +287,11 @@ x3@(x9@d10@d12)@(h1@(g1@d4@(f0@d0)@d3))
 hij zal hun beloven haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(beloven,hij),(laten,hij),(vertrekken,haar)]
+
+x3@(x9@d10@d12)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal hun beloven te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(vertrekken,hij)]
 
 x3@(x1@(x5@d10@d9)@d2)@(h1@(f1@d5@d1))
 hij zal hun willen verzoeken iets te zeggen
@@ -369,25 +393,60 @@ hij zal dreigen haar te willen laten vertrekken
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(willen,hij),(laten,hij),(vertrekken,haar)]
 
+x3@(x0@d7)@(h1@(g0@(h0@(h1@(f0@d0))@d6)@d2))
+hij zal dreigen te willen proberen te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(willen,hij),(proberen,hij),(vertrekken,hij)]
+
 x3@(x0@d7)@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))
 hij zal dreigen haar te laten willen vertrekken
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(laten,hij),(willen,haar),(vertrekken,haar)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(g0@(f0@d0)@d2))@d6))
+hij zal dreigen te proberen te willen vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(willen,hij),(vertrekken,hij)]
 
 x3@(x5@d10@d9)@(h1@(g1@d4@(f1@d5@d1)@d3))
 hij zal hun verzoeken haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(verzoeken,hij),(laten,hun),(zeggen,haar)]
 
+x3@(x5@d10@d9)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal hun verzoeken iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(zeggen,hun)]
+
+x3@(x5@d10@d9)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal hun verzoeken haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(ontmoeten,hun)]
+
 x3@(x9@d10@d12)@(h1@(g1@d4@(f1@d5@d1)@d3))
 hij zal hun beloven haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(beloven,hij),(laten,hij),(zeggen,haar)]
 
+x3@(x9@d10@d12)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal hun beloven iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(zeggen,hij)]
+
+x3@(x9@d10@d12)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal hun beloven haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(ontmoeten,hij)]
+
 x3@(x1@(x0@d7)@d2)@(h1@(g1@d4@(f0@d0)@d3))
 hij zal willen dreigen haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))),condia(su,hij))
 [(zal,hij),(willen,hij),(dreigen,hij),(laten,hij),(vertrekken,haar)]
+
+x3@(x1@(x0@d7)@d2)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal willen dreigen te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))))),condia(su,hij))
+[(zal,hij),(willen,hij),(dreigen,hij),(proberen,hij),(vertrekken,hij)]
 
 x3@(x1@(x2@d4@(x0@d7)@d3)@d2)@(h1@(f0@d0))
 hij zal haar willen laten dreigen te vertrekken
@@ -504,45 +563,115 @@ hij zal dreigen haar iets te willen laten zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(willen,hij),(laten,hij),(zeggen,haar)]
 
+x3@(x0@d7)@(h1@(g0@(h0@(h1@(f1@d5@d1))@d6)@d2))
+hij zal dreigen iets te willen proberen te zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(willen,hij),(proberen,hij),(zeggen,hij)]
+
+x3@(x0@d7)@(h1@(g0@(h0@(h1@(f2@d4@d11))@d6)@d2))
+hij zal dreigen haar te willen proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(willen,hij),(proberen,hij),(ontmoeten,hij)]
+
 x3@(x0@d7)@(h1@(g1@d4@(g0@(f1@d5@d1)@d2)@d3))
 hij zal dreigen haar iets te laten willen zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(laten,hij),(willen,haar),(zeggen,haar)]
+
+x3@(x0@d7)@(h1@(g1@d4@(h0@(h1@(f0@d0))@d6)@d3))
+hij zal dreigen haar te laten proberen te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))),condia(obj1,haar)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(laten,hij),(proberen,haar),(vertrekken,haar)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(g0@(f1@d5@d1)@d2))@d6))
+hij zal dreigen iets te proberen te willen zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(willen,hij),(zeggen,hij)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(g0@(f2@d4@d11)@d2))@d6))
+hij zal dreigen haar te proberen te willen ontmoeten
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(willen,hij),(ontmoeten,hij)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(g1@d4@(f0@d0)@d3))@d6))
+hij zal dreigen haar te proberen te laten vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(laten,hij),(vertrekken,haar)]
 
 x3@(x5@d10@d9)@(h1@(g0@(g1@d4@(f0@d0)@d3)@d2))
 hij zal hun verzoeken haar te willen laten vertrekken
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(verzoeken,hij),(willen,hun),(laten,hun),(vertrekken,haar)]
 
+x3@(x5@d10@d9)@(h1@(g0@(h0@(h1@(f0@d0))@d6)@d2))
+hij zal hun verzoeken te willen proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(willen,hun),(proberen,hun),(vertrekken,hun)]
+
 x3@(x5@d10@d9)@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))
 hij zal hun verzoeken haar te laten willen vertrekken
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(verzoeken,hij),(laten,hun),(willen,haar),(vertrekken,haar)]
+
+x3@(x5@d10@d9)@(h1@(h0@(h1@(g0@(f0@d0)@d2))@d6))
+hij zal hun verzoeken te proberen te willen vertrekken
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(willen,hun),(vertrekken,hun)]
 
 x3@(x9@d10@d12)@(h1@(g0@(g1@d4@(f0@d0)@d3)@d2))
 hij zal hun beloven haar te willen laten vertrekken
 appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(beloven,hij),(willen,hij),(laten,hij),(vertrekken,haar)]
 
+x3@(x9@d10@d12)@(h1@(g0@(h0@(h1@(f0@d0))@d6)@d2))
+hij zal hun beloven te willen proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(willen,hij),(proberen,hij),(vertrekken,hij)]
+
 x3@(x9@d10@d12)@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))
 hij zal hun beloven haar te laten willen vertrekken
 appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(beloven,hij),(laten,hij),(willen,haar),(vertrekken,haar)]
+
+x3@(x9@d10@d12)@(h1@(h0@(h1@(g0@(f0@d0)@d2))@d6))
+hij zal hun beloven te proberen te willen vertrekken
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(willen,hij),(vertrekken,hij)]
 
 x3@(x1@(x0@d7)@d2)@(h1@(g1@d4@(f1@d5@d1)@d3))
 hij zal willen dreigen haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))),condia(su,hij))
 [(zal,hij),(willen,hij),(dreigen,hij),(laten,hij),(zeggen,haar)]
 
+x3@(x1@(x0@d7)@d2)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal willen dreigen iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))))),condia(su,hij))
+[(zal,hij),(willen,hij),(dreigen,hij),(proberen,hij),(zeggen,hij)]
+
+x3@(x1@(x0@d7)@d2)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal willen dreigen haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))))),condia(su,hij))
+[(zal,hij),(willen,hij),(dreigen,hij),(proberen,hij),(ontmoeten,hij)]
+
 x3@(x1@(x5@d10@d9)@d2)@(h1@(g1@d4@(f0@d0)@d3))
 hij zal hun willen verzoeken haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))),condia(su,hij))
 [(zal,hij),(willen,hij),(verzoeken,hij),(laten,hun),(vertrekken,haar)]
 
+x3@(x1@(x5@d10@d9)@d2)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal hun willen verzoeken te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))))),condia(su,hij))
+[(zal,hij),(willen,hij),(verzoeken,hij),(proberen,hun),(vertrekken,hun)]
+
 x3@(x1@(x9@d10@d12)@d2)@(h1@(g1@d4@(f0@d0)@d3))
 hij zal hun willen beloven haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))),condia(su,hij))
 [(zal,hij),(willen,hij),(beloven,hij),(laten,hij),(vertrekken,haar)]
+
+x3@(x1@(x9@d10@d12)@d2)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal hun willen beloven te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))))),condia(su,hij))
+[(zal,hij),(willen,hij),(beloven,hij),(proberen,hij),(vertrekken,hij)]
 
 x3@(x1@(x2@d4@(x0@d7)@d3)@d2)@(h1@(f1@d5@d1))
 hij zal haar willen laten dreigen iets te zeggen
@@ -593,6 +722,11 @@ x3@(x2@d4@(x0@d7)@d3)@(h1@(g0@(f1@d5@d1)@d2))
 hij zal haar laten dreigen iets te willen zeggen
 appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj1,haar)))),condia(su,hij))
 [(zal,hij),(laten,hij),(dreigen,haar),(willen,haar),(zeggen,haar)]
+
+x3@(x2@d4@(x0@d7)@d3)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal haar laten dreigen te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(dreigen,haar),(proberen,haar),(vertrekken,haar)]
 
 x3@(x2@d4@(x5@d10@d9)@d3)@(h1@(g0@(f0@d0)@d2))
 hij zal haar hun laten verzoeken te willen vertrekken
@@ -694,35 +828,125 @@ hij zal dreigen hun te willen beloven te vertrekken
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(willen,hij),(beloven,hij),(vertrekken,hij)]
 
+x3@(x0@d7)@(h1@(g1@d4@(h0@(h1@(f1@d5@d1))@d6)@d3))
+hij zal dreigen haar iets te laten proberen te zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj1,haar)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(laten,hij),(proberen,haar),(zeggen,haar)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(g1@d4@(f1@d5@d1)@d3))@d6))
+hij zal dreigen haar iets te proberen te laten zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(laten,hij),(zeggen,haar)]
+
 x3@(x5@d10@d9)@(h1@(g0@(g1@d4@(f1@d5@d1)@d3)@d2))
 hij zal hun verzoeken haar iets te willen laten zeggen
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(verzoeken,hij),(willen,hun),(laten,hun),(zeggen,haar)]
+
+x3@(x5@d10@d9)@(h1@(g0@(h0@(h1@(f1@d5@d1))@d6)@d2))
+hij zal hun verzoeken iets te willen proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(willen,hun),(proberen,hun),(zeggen,hun)]
+
+x3@(x5@d10@d9)@(h1@(g0@(h0@(h1@(f2@d4@d11))@d6)@d2))
+hij zal hun verzoeken haar te willen proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(willen,hun),(proberen,hun),(ontmoeten,hun)]
 
 x3@(x5@d10@d9)@(h1@(g1@d4@(g0@(f1@d5@d1)@d2)@d3))
 hij zal hun verzoeken haar iets te laten willen zeggen
 appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(verzoeken,hij),(laten,hun),(willen,haar),(zeggen,haar)]
 
+x3@(x5@d10@d9)@(h1@(g1@d4@(h0@(h1@(f0@d0))@d6)@d3))
+hij zal hun verzoeken haar te laten proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(laten,hun),(proberen,haar),(vertrekken,haar)]
+
+x3@(x5@d10@d9)@(h1@(h0@(h1@(g0@(f1@d5@d1)@d2))@d6))
+hij zal hun verzoeken iets te proberen te willen zeggen
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(willen,hun),(zeggen,hun)]
+
+x3@(x5@d10@d9)@(h1@(h0@(h1@(g0@(f2@d4@d11)@d2))@d6))
+hij zal hun verzoeken haar te proberen te willen ontmoeten
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(willen,hun),(ontmoeten,hun)]
+
+x3@(x5@d10@d9)@(h1@(h0@(h1@(g1@d4@(f0@d0)@d3))@d6))
+hij zal hun verzoeken haar te proberen te laten vertrekken
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(laten,hun),(vertrekken,haar)]
+
 x3@(x9@d10@d12)@(h1@(g0@(g1@d4@(f1@d5@d1)@d3)@d2))
 hij zal hun beloven haar iets te willen laten zeggen
 appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(beloven,hij),(willen,hij),(laten,hij),(zeggen,haar)]
+
+x3@(x9@d10@d12)@(h1@(g0@(h0@(h1@(f1@d5@d1))@d6)@d2))
+hij zal hun beloven iets te willen proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(willen,hij),(proberen,hij),(zeggen,hij)]
+
+x3@(x9@d10@d12)@(h1@(g0@(h0@(h1@(f2@d4@d11))@d6)@d2))
+hij zal hun beloven haar te willen proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(willen,hij),(proberen,hij),(ontmoeten,hij)]
 
 x3@(x9@d10@d12)@(h1@(g1@d4@(g0@(f1@d5@d1)@d2)@d3))
 hij zal hun beloven haar iets te laten willen zeggen
 appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
 [(zal,hij),(beloven,hij),(laten,hij),(willen,haar),(zeggen,haar)]
 
+x3@(x9@d10@d12)@(h1@(g1@d4@(h0@(h1@(f0@d0))@d6)@d3))
+hij zal hun beloven haar te laten proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(laten,hij),(proberen,haar),(vertrekken,haar)]
+
+x3@(x9@d10@d12)@(h1@(h0@(h1@(g0@(f1@d5@d1)@d2))@d6))
+hij zal hun beloven iets te proberen te willen zeggen
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(willen,hij),(zeggen,hij)]
+
+x3@(x9@d10@d12)@(h1@(h0@(h1@(g0@(f2@d4@d11)@d2))@d6))
+hij zal hun beloven haar te proberen te willen ontmoeten
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(willen,hij),(ontmoeten,hij)]
+
+x3@(x9@d10@d12)@(h1@(h0@(h1@(g1@d4@(f0@d0)@d3))@d6))
+hij zal hun beloven haar te proberen te laten vertrekken
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(laten,hij),(vertrekken,haar)]
+
 x3@(x1@(x5@d10@d9)@d2)@(h1@(g1@d4@(f1@d5@d1)@d3))
 hij zal hun willen verzoeken haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))),condia(obj2,hun)))))),condia(su,hij))
 [(zal,hij),(willen,hij),(verzoeken,hij),(laten,hun),(zeggen,haar)]
 
+x3@(x1@(x5@d10@d9)@d2)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal hun willen verzoeken iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))))),condia(su,hij))
+[(zal,hij),(willen,hij),(verzoeken,hij),(proberen,hun),(zeggen,hun)]
+
+x3@(x1@(x5@d10@d9)@d2)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal hun willen verzoeken haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))),condia(obj2,hun)))))),condia(su,hij))
+[(zal,hij),(willen,hij),(verzoeken,hij),(proberen,hun),(ontmoeten,hun)]
+
 x3@(x1@(x9@d10@d12)@d2)@(h1@(g1@d4@(f1@d5@d1)@d3))
 hij zal hun willen beloven haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))),condia(obj2,hun)))))),condia(su,hij))
 [(zal,hij),(willen,hij),(beloven,hij),(laten,hij),(zeggen,haar)]
+
+x3@(x1@(x9@d10@d12)@d2)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal hun willen beloven iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))))),condia(su,hij))
+[(zal,hij),(willen,hij),(beloven,hij),(proberen,hij),(zeggen,hij)]
+
+x3@(x1@(x9@d10@d12)@d2)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal hun willen beloven haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))),condia(obj2,hun)))))),condia(su,hij))
+[(zal,hij),(willen,hij),(beloven,hij),(proberen,hij),(ontmoeten,hij)]
 
 x3@(x1@(x2@d4@(x5@d10@d9)@d3)@d2)@(h1@(f1@d5@d1))
 hij zal haar hun willen laten verzoeken iets te zeggen
@@ -774,15 +998,30 @@ hij zal willen dreigen hun te beloven haar te ontmoeten
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
 [(zal,hij),(willen,hij),(dreigen,hij),(beloven,hij),(ontmoeten,hij)]
 
+x3@(x2@d4@(x0@d7)@d3)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal haar laten dreigen iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(dreigen,haar),(proberen,haar),(zeggen,haar)]
+
 x3@(x2@d4@(x5@d10@d9)@d3)@(h1@(g0@(f1@d5@d1)@d2))
 hij zal haar hun laten verzoeken iets te willen zeggen
 appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj2,hun)))),condia(obj1,haar)))),condia(su,hij))
 [(zal,hij),(laten,hij),(verzoeken,haar),(willen,hun),(zeggen,hun)]
 
+x3@(x2@d4@(x5@d10@d9)@d3)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal haar hun laten verzoeken te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(verzoeken,haar),(proberen,hun),(vertrekken,hun)]
+
 x3@(x2@d4@(x9@d10@d12)@d3)@(h1@(g0@(f1@d5@d1)@d2))
 hij zal haar hun laten beloven iets te willen zeggen
 appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj2,hun)))),condia(obj1,haar)))),condia(su,hij))
 [(zal,hij),(laten,hij),(beloven,haar),(willen,haar),(zeggen,haar)]
+
+x3@(x2@d4@(x9@d10@d12)@d3)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal haar hun laten beloven te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(beloven,haar),(proberen,haar),(vertrekken,haar)]
 
 x3@(x2@d4@(x1@(x5@d10@d9)@d2)@d3)@(h1@(f1@d5@d1))
 hij zal haar hun laten willen verzoeken iets te zeggen
@@ -889,6 +1128,16 @@ hij zal haar hun proberen te laten beloven te vertrekken
 appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(proberen,hij),(laten,hij),(beloven,haar),(vertrekken,haar)]
 
+x3@(x7@(x6@(x8@(x6@(x5@d10@d9))@d7))@d6)@(h1@(f0@d0))
+hij zal proberen te dreigen hun te verzoeken te vertrekken
+appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(proberen,hij),(dreigen,hij),(verzoeken,hij),(vertrekken,hun)]
+
+x3@(x7@(x6@(x8@(x6@(x9@d10@d12))@d7))@d6)@(h1@(f0@d0))
+hij zal proberen te dreigen hun te beloven te vertrekken
+appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(proberen,hij),(dreigen,hij),(beloven,hij),(vertrekken,hij)]
+
 x3@(x8@(x6@(x5@d10@d9))@d7)@(h1@(g0@(f1@d5@d1)@d2))
 hij zal dreigen hun te verzoeken iets te willen zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj2,hun)))))))),condia(su,hij))
@@ -904,6 +1153,11 @@ hij zal dreigen hun te verzoeken haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(verzoeken,hij),(laten,hun),(vertrekken,haar)]
 
+x3@(x8@(x6@(x5@d10@d9))@d7)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal dreigen hun te verzoeken te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(verzoeken,hij),(proberen,hun),(vertrekken,hun)]
+
 x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(g0@(f1@d5@d1)@d2))
 hij zal dreigen hun te beloven iets te willen zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj2,hun)))))))),condia(su,hij))
@@ -918,6 +1172,11 @@ x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(g1@d4@(f0@d0)@d3))
 hij zal dreigen hun te beloven haar te laten vertrekken
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(beloven,hij),(laten,hij),(vertrekken,haar)]
+
+x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal dreigen hun te beloven te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj2,hun)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(beloven,hij),(proberen,hij),(vertrekken,hij)]
 
 x3@(x8@(x6@(x1@(x5@d10@d9)@d2))@d7)@(h1@(f1@d5@d1))
 hij zal dreigen hun te willen verzoeken iets te zeggen
@@ -949,6 +1208,81 @@ hij zal dreigen haar hun te laten beloven te vertrekken
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(laten,hij),(beloven,haar),(vertrekken,haar)]
 
+x3@(x8@(x6@(x7@(x6@(x5@d10@d9))@d6))@d7)@(h1@(f0@d0))
+hij zal dreigen hun te proberen te verzoeken te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(verzoeken,hij),(vertrekken,hun)]
+
+x3@(x8@(x6@(x7@(x6@(x9@d10@d12))@d6))@d7)@(h1@(f0@d0))
+hij zal dreigen hun te proberen te beloven te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(beloven,hij),(vertrekken,hij)]
+
+x3@(x0@d7)@(h1@(g0@(g1@d4@(h0@(h1@(f0@d0))@d6)@d3)@d2))
+hij zal dreigen haar te willen laten proberen te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))),condia(obj1,haar)))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(willen,hij),(laten,hij),(proberen,haar),(vertrekken,haar)]
+
+x3@(x0@d7)@(h1@(g0@(h0@(h1@(g1@d4@(f0@d0)@d3))@d6)@d2))
+hij zal dreigen haar te willen proberen te laten vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(willen,hij),(proberen,hij),(laten,hij),(vertrekken,haar)]
+
+x3@(x0@d7)@(h1@(g1@d4@(g0@(h0@(h1@(f0@d0))@d6)@d2)@d3))
+hij zal dreigen haar te laten willen proberen te vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj1,haar)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(laten,hij),(willen,haar),(proberen,haar),(vertrekken,haar)]
+
+x3@(x0@d7)@(h1@(g1@d4@(h0@(h1@(g0@(f0@d0)@d2))@d6)@d3))
+hij zal dreigen haar te laten proberen te willen vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))))),condia(obj1,haar)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(laten,hij),(proberen,haar),(willen,haar),(vertrekken,haar)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(g0@(g1@d4@(f0@d0)@d3)@d2))@d6))
+hij zal dreigen haar te proberen te willen laten vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(willen,hij),(laten,hij),(vertrekken,haar)]
+
+x3@(x0@d7)@(h1@(h0@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))@d6))
+hij zal dreigen haar te proberen te laten willen vertrekken
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(laten,hij),(willen,haar),(vertrekken,haar)]
+
+x3@(x5@d10@d9)@(h1@(g1@d4@(h0@(h1@(f1@d5@d1))@d6)@d3))
+hij zal hun verzoeken haar iets te laten proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(laten,hun),(proberen,haar),(zeggen,haar)]
+
+x3@(x5@d10@d9)@(h1@(h0@(h1@(g1@d4@(f1@d5@d1)@d3))@d6))
+hij zal hun verzoeken haar iets te proberen te laten zeggen
+appl(appl(zal,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(verzoeken,hij),(proberen,hun),(laten,hun),(zeggen,haar)]
+
+x3@(x9@d10@d12)@(h1@(g1@d4@(h0@(h1@(f1@d5@d1))@d6)@d3))
+hij zal hun beloven haar iets te laten proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj1,haar)))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(laten,hij),(proberen,haar),(zeggen,haar)]
+
+x3@(x9@d10@d12)@(h1@(h0@(h1@(g1@d4@(f1@d5@d1)@d3))@d6))
+hij zal hun beloven haar iets te proberen te laten zeggen
+appl(appl(zal,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))),condia(obj2,hun)))),condia(su,hij))
+[(zal,hij),(beloven,hij),(proberen,hij),(laten,hij),(zeggen,haar)]
+
+x3@(x1@(x0@d7)@d2)@(h1@(g1@d4@(h0@(h1@(f0@d0))@d6)@d3))
+hij zal willen dreigen haar te laten proberen te vertrekken
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))),condia(obj1,haar)))))))))),condia(su,hij))
+[(zal,hij),(willen,hij),(dreigen,hij),(laten,hij),(proberen,haar),(vertrekken,haar)]
+
+x3@(x1@(x0@d7)@d2)@(h1@(h0@(h1@(g1@d4@(f0@d0)@d3))@d6))
+hij zal willen dreigen haar te proberen te laten vertrekken
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))))))))),condia(su,hij))
+[(zal,hij),(willen,hij),(dreigen,hij),(proberen,hij),(laten,hij),(vertrekken,haar)]
+
+x3@(x1@(x2@d4@(x0@d7)@d3)@d2)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal haar willen laten dreigen te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))),condia(obj1,haar)))))),condia(su,hij))
+[(zal,hij),(willen,hij),(laten,hij),(dreigen,haar),(proberen,haar),(vertrekken,haar)]
+
 x3@(x1@(x2@d4@(x7@(x6@(x0@d7))@d6)@d3)@d2)@(h1@(f0@d0))
 hij zal haar willen laten proberen te dreigen te vertrekken
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,vertrekken)))))))))),condia(obj1,haar)))))),condia(su,hij))
@@ -963,6 +1297,31 @@ x3@(x1@(x7@(x6@(x2@d4@(x0@d7)@d3))@d6)@d2)@(h1@(f0@d0))
 hij zal haar willen proberen te laten dreigen te vertrekken
 appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,vertrekken)))))),condia(obj1,haar)))))))))),condia(su,hij))
 [(zal,hij),(willen,hij),(proberen,hij),(laten,hij),(dreigen,haar),(vertrekken,haar)]
+
+x3@(x2@d4@(x0@d7)@d3)@(h1@(g0@(h0@(h1@(f0@d0))@d6)@d2))
+hij zal haar laten dreigen te willen proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(dreigen,haar),(willen,haar),(proberen,haar),(vertrekken,haar)]
+
+x3@(x2@d4@(x0@d7)@d3)@(h1@(h0@(h1@(g0@(f0@d0)@d2))@d6))
+hij zal haar laten dreigen te proberen te willen vertrekken
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))))))))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(dreigen,haar),(proberen,haar),(willen,haar),(vertrekken,haar)]
+
+x3@(x2@d4@(x5@d10@d9)@d3)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal haar hun laten verzoeken iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(verzoeken,haar),(proberen,hun),(zeggen,hun)]
+
+x3@(x2@d4@(x9@d10@d12)@d3)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal haar hun laten beloven iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(beloven,haar),(proberen,haar),(zeggen,haar)]
+
+x3@(x2@d4@(x1@(x0@d7)@d2)@d3)@(h1@(h0@(h1@(f0@d0))@d6))
+hij zal haar laten willen dreigen te proberen te vertrekken
+appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,vertrekken)))))))))))),condia(obj1,haar)))),condia(su,hij))
+[(zal,hij),(laten,hij),(willen,haar),(dreigen,haar),(proberen,haar),(vertrekken,haar)]
 
 x3@(x2@d4@(x1@(x7@(x6@(x0@d7))@d6)@d2)@d3)@(h1@(f0@d0))
 hij zal haar laten willen proberen te dreigen te vertrekken
@@ -1049,15 +1408,55 @@ hij zal haar proberen te laten willen dreigen te vertrekken
 appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,vertrekken)))))))),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(proberen,hij),(laten,hij),(willen,haar),(dreigen,haar),(vertrekken,haar)]
 
+x3@(x7@(x6@(x8@(x6@(x5@d10@d9))@d7))@d6)@(h1@(f1@d5@d1))
+hij zal proberen te dreigen hun te verzoeken iets te zeggen
+appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(proberen,hij),(dreigen,hij),(verzoeken,hij),(zeggen,hun)]
+
+x3@(x7@(x6@(x8@(x6@(x5@d10@d9))@d7))@d6)@(h1@(f2@d4@d11))
+hij zal proberen te dreigen hun te verzoeken haar te ontmoeten
+appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(proberen,hij),(dreigen,hij),(verzoeken,hij),(ontmoeten,hun)]
+
+x3@(x7@(x6@(x8@(x6@(x9@d10@d12))@d7))@d6)@(h1@(f1@d5@d1))
+hij zal proberen te dreigen hun te beloven iets te zeggen
+appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(proberen,hij),(dreigen,hij),(beloven,hij),(zeggen,hij)]
+
+x3@(x7@(x6@(x8@(x6@(x9@d10@d12))@d7))@d6)@(h1@(f2@d4@d11))
+hij zal proberen te dreigen hun te beloven haar te ontmoeten
+appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(proberen,hij),(dreigen,hij),(beloven,hij),(ontmoeten,hij)]
+
 x3@(x8@(x6@(x5@d10@d9))@d7)@(h1@(g1@d4@(f1@d5@d1)@d3))
 hij zal dreigen hun te verzoeken haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(verzoeken,hij),(laten,hun),(zeggen,haar)]
 
+x3@(x8@(x6@(x5@d10@d9))@d7)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal dreigen hun te verzoeken iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(verzoeken,hij),(proberen,hun),(zeggen,hun)]
+
+x3@(x8@(x6@(x5@d10@d9))@d7)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal dreigen hun te verzoeken haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))),condia(obj2,hun)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(verzoeken,hij),(proberen,hun),(ontmoeten,hun)]
+
 x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(g1@d4@(f1@d5@d1)@d3))
 hij zal dreigen hun te beloven haar iets te laten zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(beloven,hij),(laten,hij),(zeggen,haar)]
+
+x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(h0@(h1@(f1@d5@d1))@d6))
+hij zal dreigen hun te beloven iets te proberen te zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj2,hun)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(beloven,hij),(proberen,hij),(zeggen,hij)]
+
+x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(h0@(h1@(f2@d4@d11))@d6))
+hij zal dreigen hun te beloven haar te proberen te ontmoeten
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))))))),condia(obj2,hun)))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(beloven,hij),(proberen,hij),(ontmoeten,hij)]
 
 x3@(x8@(x6@(x2@d4@(x5@d10@d9)@d3))@d7)@(h1@(f1@d5@d1))
 hij zal dreigen haar hun te laten verzoeken iets te zeggen
@@ -1069,302 +1468,22 @@ hij zal dreigen haar hun te laten beloven iets te zeggen
 appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj2,hun)))),condia(obj1,haar)))))))),condia(su,hij))
 [(zal,hij),(dreigen,hij),(laten,hij),(beloven,haar),(zeggen,haar)]
 
-x3@(x1@(x2@d4@(x7@(x6@(x0@d7))@d6)@d3)@d2)@(h1@(f1@d5@d1))
-hij zal haar willen laten proberen te dreigen iets te zeggen
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))),condia(obj1,haar)))))),condia(su,hij))
-[(zal,hij),(willen,hij),(laten,hij),(proberen,haar),(dreigen,haar),(zeggen,haar)]
+x3@(x8@(x6@(x7@(x6@(x5@d10@d9))@d6))@d7)@(h1@(f1@d5@d1))
+hij zal dreigen hun te proberen te verzoeken iets te zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(verzoeken,hij),(zeggen,hun)]
 
-x3@(x1@(x2@d4@(x7@(x6@(x5@d10@d9))@d6)@d3)@d2)@(h1@(f0@d0))
-hij zal haar hun willen laten proberen te verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))),condia(obj1,haar)))))),condia(su,hij))
-[(zal,hij),(willen,hij),(laten,hij),(proberen,haar),(verzoeken,haar),(vertrekken,hun)]
+x3@(x8@(x6@(x7@(x6@(x5@d10@d9))@d6))@d7)@(h1@(f2@d4@d11))
+hij zal dreigen hun te proberen te verzoeken haar te ontmoeten
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(verzoeken,hij),(ontmoeten,hun)]
 
-x3@(x1@(x2@d4@(x7@(x6@(x9@d10@d12))@d6)@d3)@d2)@(h1@(f0@d0))
-hij zal haar hun willen laten proberen te beloven te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))),condia(obj1,haar)))))),condia(su,hij))
-[(zal,hij),(willen,hij),(laten,hij),(proberen,haar),(beloven,haar),(vertrekken,haar)]
+x3@(x8@(x6@(x7@(x6@(x9@d10@d12))@d6))@d7)@(h1@(f1@d5@d1))
+hij zal dreigen hun te proberen te beloven iets te zeggen
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(beloven,hij),(zeggen,hij)]
 
-x3@(x1@(x2@d4@(x8@(x6@(x5@d10@d9))@d7)@d3)@d2)@(h1@(f0@d0))
-hij zal haar willen laten dreigen hun te verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))),condia(obj1,haar)))))),condia(su,hij))
-[(zal,hij),(willen,hij),(laten,hij),(dreigen,haar),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x1@(x2@d4@(x8@(x6@(x9@d10@d12))@d7)@d3)@d2)@(h1@(f0@d0))
-hij zal haar willen laten dreigen hun te beloven te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))),condia(obj1,haar)))))),condia(su,hij))
-[(zal,hij),(willen,hij),(laten,hij),(dreigen,haar),(beloven,haar),(vertrekken,haar)]
-
-x3@(x1@(x7@(x6@(x0@d7))@d6)@d2)@(h1@(g1@d4@(f1@d5@d1)@d3))
-hij zal willen proberen te dreigen haar iets te laten zeggen
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(proberen,hij),(dreigen,hij),(laten,hij),(zeggen,haar)]
-
-x3@(x1@(x7@(x6@(x5@d10@d9))@d6)@d2)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal hun willen proberen te verzoeken haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(proberen,hij),(verzoeken,hij),(laten,hun),(vertrekken,haar)]
-
-x3@(x1@(x7@(x6@(x9@d10@d12))@d6)@d2)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal hun willen proberen te beloven haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(proberen,hij),(beloven,hij),(laten,hij),(vertrekken,haar)]
-
-x3@(x1@(x7@(x6@(x2@d4@(x0@d7)@d3))@d6)@d2)@(h1@(f1@d5@d1))
-hij zal haar willen proberen te laten dreigen iets te zeggen
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(proberen,hij),(laten,hij),(dreigen,haar),(zeggen,haar)]
-
-x3@(x1@(x7@(x6@(x2@d4@(x5@d10@d9)@d3))@d6)@d2)@(h1@(f0@d0))
-hij zal haar hun willen proberen te laten verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(proberen,hij),(laten,hij),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x1@(x7@(x6@(x2@d4@(x9@d10@d12)@d3))@d6)@d2)@(h1@(f0@d0))
-hij zal haar hun willen proberen te laten beloven te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(proberen,hij),(laten,hij),(beloven,haar),(vertrekken,haar)]
-
-x3@(x1@(x8@(x6@(x5@d10@d9))@d7)@d2)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal willen dreigen hun te verzoeken haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(dreigen,hij),(verzoeken,hij),(laten,hun),(vertrekken,haar)]
-
-x3@(x1@(x8@(x6@(x9@d10@d12))@d7)@d2)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal willen dreigen hun te beloven haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(dreigen,hij),(beloven,hij),(laten,hij),(vertrekken,haar)]
-
-x3@(x1@(x8@(x6@(x2@d4@(x5@d10@d9)@d3))@d7)@d2)@(h1@(f0@d0))
-hij zal willen dreigen haar hun te laten verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(dreigen,hij),(laten,hij),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x1@(x8@(x6@(x2@d4@(x9@d10@d12)@d3))@d7)@d2)@(h1@(f0@d0))
-hij zal willen dreigen haar hun te laten beloven te vertrekken
-appl(appl(zal,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(willen,hij),(dreigen,hij),(laten,hij),(beloven,haar),(vertrekken,haar)]
-
-x3@(x2@d4@(x1@(x7@(x6@(x0@d7))@d6)@d2)@d3)@(h1@(f1@d5@d1))
-hij zal haar laten willen proberen te dreigen iets te zeggen
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(willen,haar),(proberen,haar),(dreigen,haar),(zeggen,haar)]
-
-x3@(x2@d4@(x1@(x7@(x6@(x5@d10@d9))@d6)@d2)@d3)@(h1@(f0@d0))
-hij zal haar hun laten willen proberen te verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(willen,haar),(proberen,haar),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x2@d4@(x1@(x7@(x6@(x9@d10@d12))@d6)@d2)@d3)@(h1@(f0@d0))
-hij zal haar hun laten willen proberen te beloven te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(willen,haar),(proberen,haar),(beloven,haar),(vertrekken,haar)]
-
-x3@(x2@d4@(x1@(x8@(x6@(x5@d10@d9))@d7)@d2)@d3)@(h1@(f0@d0))
-hij zal haar laten willen dreigen hun te verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(willen,haar),(dreigen,haar),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x2@d4@(x1@(x8@(x6@(x9@d10@d12))@d7)@d2)@d3)@(h1@(f0@d0))
-hij zal haar laten willen dreigen hun te beloven te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(willen,haar),(dreigen,haar),(beloven,haar),(vertrekken,haar)]
-
-x3@(x2@d4@(x7@(x6@(x0@d7))@d6)@d3)@(h1@(g0@(f1@d5@d1)@d2))
-hij zal haar laten proberen te dreigen iets te willen zeggen
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(proberen,haar),(dreigen,haar),(willen,haar),(zeggen,haar)]
-
-x3@(x2@d4@(x7@(x6@(x5@d10@d9))@d6)@d3)@(h1@(g0@(f0@d0)@d2))
-hij zal haar hun laten proberen te verzoeken te willen vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(proberen,haar),(verzoeken,haar),(willen,hun),(vertrekken,hun)]
-
-x3@(x2@d4@(x7@(x6@(x9@d10@d12))@d6)@d3)@(h1@(g0@(f0@d0)@d2))
-hij zal haar hun laten proberen te beloven te willen vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(proberen,haar),(beloven,haar),(willen,haar),(vertrekken,haar)]
-
-x3@(x2@d4@(x7@(x6@(x1@(x0@d7)@d2))@d6)@d3)@(h1@(f1@d5@d1))
-hij zal haar laten proberen te willen dreigen iets te zeggen
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(proberen,haar),(willen,haar),(dreigen,haar),(zeggen,haar)]
-
-x3@(x2@d4@(x7@(x6@(x1@(x5@d10@d9)@d2))@d6)@d3)@(h1@(f0@d0))
-hij zal haar hun laten proberen te willen verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(proberen,haar),(willen,haar),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x2@d4@(x7@(x6@(x1@(x9@d10@d12)@d2))@d6)@d3)@(h1@(f0@d0))
-hij zal haar hun laten proberen te willen beloven te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(proberen,haar),(willen,haar),(beloven,haar),(vertrekken,haar)]
-
-x3@(x2@d4@(x8@(x6@(x5@d10@d9))@d7)@d3)@(h1@(g0@(f0@d0)@d2))
-hij zal haar laten dreigen hun te verzoeken te willen vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(dreigen,haar),(verzoeken,haar),(willen,hun),(vertrekken,hun)]
-
-x3@(x2@d4@(x8@(x6@(x9@d10@d12))@d7)@d3)@(h1@(g0@(f0@d0)@d2))
-hij zal haar laten dreigen hun te beloven te willen vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(dreigen,haar),(beloven,haar),(willen,haar),(vertrekken,haar)]
-
-x3@(x2@d4@(x8@(x6@(x1@(x5@d10@d9)@d2))@d7)@d3)@(h1@(f0@d0))
-hij zal haar laten dreigen hun te willen verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(dreigen,haar),(willen,haar),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x2@d4@(x8@(x6@(x1@(x9@d10@d12)@d2))@d7)@d3)@(h1@(f0@d0))
-hij zal haar laten dreigen hun te willen beloven te vertrekken
-appl(appl(zal,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))))))),condia(obj1,haar)))),condia(su,hij))
-[(zal,hij),(laten,hij),(dreigen,haar),(willen,haar),(beloven,haar),(vertrekken,haar)]
-
-x3@(x7@(x6@(x0@d7))@d6)@(h1@(g0@(g1@d4@(f1@d5@d1)@d3)@d2))
-hij zal proberen te dreigen haar iets te willen laten zeggen
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(dreigen,hij),(willen,hij),(laten,hij),(zeggen,haar)]
-
-x3@(x7@(x6@(x0@d7))@d6)@(h1@(g1@d4@(g0@(f1@d5@d1)@d2)@d3))
-hij zal proberen te dreigen haar iets te laten willen zeggen
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))),condia(obj1,haar)))))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(dreigen,hij),(laten,hij),(willen,haar),(zeggen,haar)]
-
-x3@(x7@(x6@(x5@d10@d9))@d6)@(h1@(g0@(g1@d4@(f0@d0)@d3)@d2))
-hij zal hun proberen te verzoeken haar te willen laten vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(verzoeken,hij),(willen,hun),(laten,hun),(vertrekken,haar)]
-
-x3@(x7@(x6@(x5@d10@d9))@d6)@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))
-hij zal hun proberen te verzoeken haar te laten willen vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(verzoeken,hij),(laten,hun),(willen,haar),(vertrekken,haar)]
-
-x3@(x7@(x6@(x9@d10@d12))@d6)@(h1@(g0@(g1@d4@(f0@d0)@d3)@d2))
-hij zal hun proberen te beloven haar te willen laten vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(beloven,hij),(willen,hij),(laten,hij),(vertrekken,haar)]
-
-x3@(x7@(x6@(x9@d10@d12))@d6)@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))
-hij zal hun proberen te beloven haar te laten willen vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(beloven,hij),(laten,hij),(willen,haar),(vertrekken,haar)]
-
-x3@(x7@(x6@(x1@(x0@d7)@d2))@d6)@(h1@(g1@d4@(f1@d5@d1)@d3))
-hij zal proberen te willen dreigen haar iets te laten zeggen
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(zeggen,condia(obj1,iets)))),condia(obj1,haar)))))))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(willen,hij),(dreigen,hij),(laten,hij),(zeggen,haar)]
-
-x3@(x7@(x6@(x1@(x5@d10@d9)@d2))@d6)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal hun proberen te willen verzoeken haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(willen,hij),(verzoeken,hij),(laten,hun),(vertrekken,haar)]
-
-x3@(x7@(x6@(x1@(x9@d10@d12)@d2))@d6)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal hun proberen te willen beloven haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(willen,hij),(beloven,hij),(laten,hij),(vertrekken,haar)]
-
-x3@(x7@(x6@(x1@(x2@d4@(x0@d7)@d3)@d2))@d6)@(h1@(f1@d5@d1))
-hij zal haar proberen te willen laten dreigen iets te zeggen
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(willen,hij),(laten,hij),(dreigen,haar),(zeggen,haar)]
-
-x3@(x7@(x6@(x1@(x2@d4@(x5@d10@d9)@d3)@d2))@d6)@(h1@(f0@d0))
-hij zal haar hun proberen te willen laten verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(willen,hij),(laten,hij),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x7@(x6@(x1@(x2@d4@(x9@d10@d12)@d3)@d2))@d6)@(h1@(f0@d0))
-hij zal haar hun proberen te willen laten beloven te vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(willen,hij),(laten,hij),(beloven,haar),(vertrekken,haar)]
-
-x3@(x7@(x6@(x2@d4@(x0@d7)@d3))@d6)@(h1@(g0@(f1@d5@d1)@d2))
-hij zal haar proberen te laten dreigen iets te willen zeggen
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(laten,hij),(dreigen,haar),(willen,haar),(zeggen,haar)]
-
-x3@(x7@(x6@(x2@d4@(x5@d10@d9)@d3))@d6)@(h1@(g0@(f0@d0)@d2))
-hij zal haar hun proberen te laten verzoeken te willen vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(laten,hij),(verzoeken,haar),(willen,hun),(vertrekken,hun)]
-
-x3@(x7@(x6@(x2@d4@(x9@d10@d12)@d3))@d6)@(h1@(g0@(f0@d0)@d2))
-hij zal haar hun proberen te laten beloven te willen vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(laten,hij),(beloven,haar),(willen,haar),(vertrekken,haar)]
-
-x3@(x7@(x6@(x2@d4@(x1@(x0@d7)@d2)@d3))@d6)@(h1@(f1@d5@d1))
-hij zal haar proberen te laten willen dreigen iets te zeggen
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(zeggen,condia(obj1,iets)))))))))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(laten,hij),(willen,haar),(dreigen,haar),(zeggen,haar)]
-
-x3@(x7@(x6@(x2@d4@(x1@(x5@d10@d9)@d2)@d3))@d6)@(h1@(f0@d0))
-hij zal haar hun proberen te laten willen verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(laten,hij),(willen,haar),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x7@(x6@(x2@d4@(x1@(x9@d10@d12)@d2)@d3))@d6)@(h1@(f0@d0))
-hij zal haar hun proberen te laten willen beloven te vertrekken
-appl(appl(zal,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(proberen,hij),(laten,hij),(willen,haar),(beloven,haar),(vertrekken,haar)]
-
-x3@(x8@(x6@(x5@d10@d9))@d7)@(h1@(g0@(g1@d4@(f0@d0)@d3)@d2))
-hij zal dreigen hun te verzoeken haar te willen laten vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(verzoeken,hij),(willen,hun),(laten,hun),(vertrekken,haar)]
-
-x3@(x8@(x6@(x5@d10@d9))@d7)@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))
-hij zal dreigen hun te verzoeken haar te laten willen vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(verzoeken,hij),(laten,hun),(willen,haar),(vertrekken,haar)]
-
-x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(g0@(g1@d4@(f0@d0)@d3)@d2))
-hij zal dreigen hun te beloven haar te willen laten vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(beloven,hij),(willen,hij),(laten,hij),(vertrekken,haar)]
-
-x3@(x8@(x6@(x9@d10@d12))@d7)@(h1@(g1@d4@(g0@(f0@d0)@d2)@d3))
-hij zal dreigen hun te beloven haar te laten willen vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,vertrekken)))),condia(obj1,haar)))))),condia(obj2,hun)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(beloven,hij),(laten,hij),(willen,haar),(vertrekken,haar)]
-
-x3@(x8@(x6@(x1@(x5@d10@d9)@d2))@d7)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal dreigen hun te willen verzoeken haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(willen,hij),(verzoeken,hij),(laten,hun),(vertrekken,haar)]
-
-x3@(x8@(x6@(x1@(x9@d10@d12)@d2))@d7)@(h1@(g1@d4@(f0@d0)@d3))
-hij zal dreigen hun te willen beloven haar te laten vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,vertrekken)),condia(obj1,haar)))))),condia(obj2,hun)))))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(willen,hij),(beloven,hij),(laten,hij),(vertrekken,haar)]
-
-x3@(x8@(x6@(x1@(x2@d4@(x5@d10@d9)@d3)@d2))@d7)@(h1@(f0@d0))
-hij zal dreigen haar hun te willen laten verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(willen,hij),(laten,hij),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x8@(x6@(x1@(x2@d4@(x9@d10@d12)@d3)@d2))@d7)@(h1@(f0@d0))
-hij zal dreigen haar hun te willen laten beloven te vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))),condia(obj1,haar)))))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(willen,hij),(laten,hij),(beloven,haar),(vertrekken,haar)]
-
-x3@(x8@(x6@(x2@d4@(x5@d10@d9)@d3))@d7)@(h1@(g0@(f0@d0)@d2))
-hij zal dreigen haar hun te laten verzoeken te willen vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(laten,hij),(verzoeken,haar),(willen,hun),(vertrekken,hun)]
-
-x3@(x8@(x6@(x2@d4@(x9@d10@d12)@d3))@d7)@(h1@(g0@(f0@d0)@d2))
-hij zal dreigen haar hun te laten beloven te willen vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(willen,condia(vc,vertrekken)))))),condia(obj2,hun)))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(laten,hij),(beloven,haar),(willen,haar),(vertrekken,haar)]
-
-x3@(x8@(x6@(x2@d4@(x1@(x5@d10@d9)@d2)@d3))@d7)@(h1@(f0@d0))
-hij zal dreigen haar hun te laten willen verzoeken te vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(appl(verzoeken,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(laten,hij),(willen,haar),(verzoeken,haar),(vertrekken,hun)]
-
-x3@(x8@(x6@(x2@d4@(x1@(x9@d10@d12)@d2)@d3))@d7)@(h1@(f0@d0))
-hij zal dreigen haar hun te laten willen beloven te vertrekken
-appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(appl(laten,condia(vc,appl(willen,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,vertrekken)))),condia(obj2,hun)))))),condia(obj1,haar)))))))),condia(su,hij))
-[(zal,hij),(dreigen,hij),(laten,hij),(willen,haar),(beloven,haar),(vertrekken,haar)]
+x3@(x8@(x6@(x7@(x6@(x9@d10@d12))@d6))@d7)@(h1@(f2@d4@d11))
+hij zal dreigen hun te proberen te beloven haar te ontmoeten
+appl(appl(zal,condia(vc,appl(dreigen,condia(vc,appl(te,condia(vc,appl(proberen,condia(vc,appl(te,condia(vc,appl(appl(beloven,condia(vc,appl(te,condia(vc,appl(ontmoeten,condia(obj1,haar)))))),condia(obj2,hun)))))))))))),condia(su,hij))
+[(zal,hij),(dreigen,hij),(proberen,hij),(beloven,hij),(ontmoeten,hij)]
