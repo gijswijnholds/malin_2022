@@ -359,7 +359,9 @@ generate_sem_sample(K) :-
 	between(1,K,N),
 	length(L,N),
 	s(Term,L,[]),
-	sort(L,L0),length(L0,N), % filter out duplicates
+%	sort(L,L0),length(L0,N), % filter out duplicates
+	setof(X,(member(X,L),X@<e),List),length(List,M),
+	findall(X,(member(X,L),X@<e),List1),length(List1,M),
 	generate(L,Words),
 	atomics_to_string(Words,' ',String),
 	theta1(Term,Sem),
