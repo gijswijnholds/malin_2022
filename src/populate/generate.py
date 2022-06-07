@@ -1,6 +1,6 @@
 from __future__ import annotations
 from enum import Enum, auto
-from typing import NamedTuple
+from typing import NamedTuple, Callable
 from src.populate.lexicon import Lexicon
 import random
 import json
@@ -27,6 +27,7 @@ class Category(Enum):
     PREF1 = (auto(), False)
     PREF2 = (auto(), True)
     TE = (auto(), None)
+    META_INF = (auto(), True)
 
     def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')
     def is_noun(self) -> bool: return self.value[1] is not None and not self.value[1]
@@ -202,6 +203,14 @@ def appl(left, right) -> Application:
 
 def condia(left, right) -> DiaElim:
     return DiaElim(left, right)
+
+
+def term_fmap(f: Callable[[Category], Category], term: Term) -> Term | Category:
+    def go(_term: Term | Category) -> Term: return term_fmap(f, _term)
+
+    if isinstance(term, Application): return Application(go(term.function), go(term.argument))
+    if isinstance(term, DiaElim): return DiaElim(term.diamond, go(term.body))
+    if isinstance(term, Category): return f(term)
 
 
 ########################################################################################################################
