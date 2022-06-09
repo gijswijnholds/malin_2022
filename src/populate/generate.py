@@ -28,6 +28,7 @@ class Category(Enum):
     PREF2 = (auto(), True)
     TE = (auto(), None)
     META_INF = (auto(), True)
+    META_CTRL = (auto(), True)
 
     def to_lexicon(self) -> Choices: return eval(f'Lexicon.{self.name.lower()}()')
     def is_noun(self) -> bool: return self.value[1] is not None and not self.value[1]
@@ -102,7 +103,7 @@ class Rule(AST, Enum):
 
     def __repr__(self) -> str: return self.name
     def __len__(self) -> int: return 0
-    def __eq__(self, other) ->  bool: return isinstance(other, Rule) and self.name == other.name
+    def __eq__(self, other) -> bool: return isinstance(other, Rule) and self.name == other.name
     def __hash__(self) -> int: return hash(self.name)
 
 

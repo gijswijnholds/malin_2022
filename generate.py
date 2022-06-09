@@ -2,7 +2,7 @@ from src.populate.generate import dump_to_json, load_concrete_samples
 import random
 
 
-def main(ipath: str = '../prolog/sample.txt', opath: str = '../populated.json', n: int = 10):
+def main(ipath: str = './src/prolog/sample.txt', opath: str = './populated.json1', n: int = 10):
     return dump_to_json(load_concrete_samples(ipath, n), opath)
 
 

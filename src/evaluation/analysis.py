@@ -16,12 +16,18 @@ def aggr_torch_seeds(results: tuple[list[tuple[bool, Context]], ...]) -> list[tu
     return [(tuple(r[0] for r in rs), rs[0][1]) for rs in zip(*results)]
 
 
-def _collate_cat(cat: Category) -> Category:
+def _collate_raise_and_extra(cat: Category) -> Category:
     return Category.META_INF if cat in {Category.INF2, Category.IVR2} else cat
 
 
-def collate_cat(term: Term) -> Term:
-    return term_fmap(_collate_cat, term)
+def collate_raise_and_extra(term: Term) -> Term: return term_fmap(_collate_raise_and_extra, term)
+
+
+def _collate_control(cat: Category) -> Category:
+    return Category.META_CTRL if cat in {Category.INF3, Category.INF4} else cat
+
+
+def collate_control(term: Term) -> Term: return term_fmap(_collate_control, term)
 
 
 class Context(NamedTuple):
@@ -106,10 +112,10 @@ def group_by_head_type(preds: list[tuple[tuple[bool, ...], Context]]) \
 
 
 def group_by_semterm(
-        preds: list[tuple[tuple[bool, ...], Context]], simplify: bool) -> dict[Term, list[tuple[tuple[bool, ...], Context]]]:
-    def f(_term) -> Term: return collate_cat(_term) if simplify else _term
-    unique_terms = set(f(c.term) for _, c in preds)
-    return {term: gather(lambda c: f(c.term) == term, preds) for term in unique_terms}
+        preds: list[tuple[tuple[bool, ...], Context]],
+        fmap: Callable[[Term], Term]) -> dict[Term, list[tuple[tuple[bool, ...], Context]]]:
+    unique_terms = set(fmap(c.term) for _, c in preds)
+    return {term: gather(lambda c: fmap(c.term) == term, preds) for term in unique_terms}
 
 
 def group_by_sentence(
@@ -125,8 +131,8 @@ def group_by_ast(preds: list[tuple[tuple[bool, ...], Context]]) -> dict[AST, lis
 
 def group_semterms_by_different_derivations(
         preds: list[tuple[tuple[bool, ...], Context]]) -> dict[bool, dict[str, list[tuple[tuple[bool, ...], Context]]]]:
-    by_term: dict[Term, list[tuple[tuple[bool, ...], Context]]] = group_by_semterm(preds, True)
-    by_term_squared = {k: group_by_semterm(vs, False) for k, vs in by_term.items()}
+    by_term: dict[Term, list[tuple[tuple[bool, ...], Context]]] = group_by_semterm(preds, collate_raise_and_extra)
+    by_term_squared = {k: group_by_semterm(vs, lambda x: x) for k, vs in by_term.items()}
     by_term_squared = {k: vs for k, vs in by_term_squared.items() if has_multiple(vs)}
     ret = {True: {'left': [], 'verb': [], 'right': []}, False: {'left': [], 'verb': [], 'right': []}}
     for key in by_term_squared:
@@ -141,6 +147,25 @@ def group_semterms_by_different_derivations(
         ret[not here_raiser]['left'] += left
         ret[not here_raiser]['right'] += right
         ret[not here_raiser]['verb'] += verb
+    return ret
+
+
+def group_semterms_by_control(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[str, list[tuple[tuple[bool, ...], Context]]]:
+    by_term: dict[Term, list[tuple[tuple[bool, ...], Context]]] = group_by_semterm(preds, collate_control)
+    by_term = {k: [(ps, c) for ps, c in vs if c.dominated_by in {Category.INF3, Category.INF4}]
+               for k, vs in by_term.items()}
+    by_term_squared = {k: group_by_semterm(vs, lambda x: x) for k, vs in by_term.items()}
+    by_term_squared = {k: vs for k, vs in by_term_squared.items() if has_multiple(vs)}
+    ret: dict[str, list[tuple[tuple[bool, ...], Context]]] = {'inf3': [], 'inf4': []}
+    for k, vs in by_term_squared.items():
+        assert len(vs) == 2
+        key1, key2 = tuple(vs.keys())
+        assert len(vs[key1]) == len(vs[key2]) == 10
+        cat1, cat2 = find_diff(key1, key2)
+        inf3, inf4 = (vs[key1], vs[key2]) if cat1 == Category.INF3 else (vs[key2], vs[key1])
+        ret['inf3'] += inf3
+        ret['inf4'] += inf4
     return ret
 
 
@@ -188,12 +213,24 @@ def stats(xs: list[tuple[tuple[bool, ...], Context]]) -> tuple[float, float, int
     return sum(bs)/len(bs), sum(ac)/len(ac), len(bs)
 
 
+def group_by_cat(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[Category, list[tuple[tuple[bool, ...], Context]]]:
+    return {cat: gather(lambda c: c.category == cat, preds) for cat in set(c.category for _, c in preds)}
+
+
+def group_by_dom_cat(
+        preds: list[tuple[tuple[bool, ...], Context]]) -> dict[Category, list[tuple[tuple[bool, ...], Context]]]:
+    return {cat: gather(lambda c: c.dominated_by == cat, preds) for cat in set(c.dominated_by for _, c in preds)}
+
+
 def analyze(aggregated: list[tuple[tuple[bool, ...], Context]]) -> None:
     def p(xs: list[tuple[tuple[bool, ...], Context]]) -> str:
         bs, ac, tot = stats(xs)
         return f'{ac} {bs} {tot}'
 
     aggregated = filter_simple(aggregated)
+    # by_control = group_semterms_by_control(aggregated)
+    # pdb.set_trace()
     total = p(aggregated)
     print(f'total: {total}')
     by_num_flippers = group_by_num_flippers(aggregated)
@@ -203,6 +240,12 @@ def analyze(aggregated: list[tuple[tuple[bool, ...], Context]]) -> None:
     print('=' * 64)
     for k, vs in by_verbal_type.items(): print(f'{k}: {p(vs)}')
     by_num_nouns = group_by_num_nouns(aggregated)
+    print('=' * 64)
+    by_cat = group_by_cat(aggregated)
+    for k, vs in by_cat.items(): print(f'{k}: {p(vs)}')
+    print('=' * 64)
+    by_dom_cat = group_by_dom_cat(aggregated)
+    for k, vs in by_dom_cat.items(): print(f'{k}: {p(vs)}')
     print('=' * 64)
     for k, vs in by_num_nouns.items(): print(f'{k}: {p(vs)}')
     by_num_verbs = group_by_num_verbs(aggregated)
